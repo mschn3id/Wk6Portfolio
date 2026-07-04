@@ -215,10 +215,10 @@ img { display: block; max-width: 100%; height: auto; }
 
 .site-header__inner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding-block: var(--space-6);
   gap: 1rem;
+  position: relative;
 }
 
 .site-logo {
@@ -238,16 +238,27 @@ img { display: block; max-width: 100%; height: auto; }
 
 .site-nav {
   flex: 1;
-  display: flex;
-  justify-content: center;
 }
 
 .site-nav__list {
   display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 1.6em;
+}
+
+.site-nav__link--projects {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.site-nav__actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
   gap: var(--space-10);
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .site-nav__link {
@@ -256,11 +267,6 @@ img { display: block; max-width: 100%; height: auto; }
   text-decoration: none;
   font-size: 1.1em;
   line-height: 1.6;
-}
-
-.site-header__cta {
-  flex: 0 0 8.3rem;
-  text-align: right;
 }
 
 /* Overflow hover */
@@ -769,7 +775,12 @@ img { display: block; max-width: 100%; height: auto; }
     grid-template-columns: 1fr;
   }
 
-  .nav-toggle { display: flex; align-items: center; justify-content: center; }
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+  }
 
   .site-nav {
     position: absolute;
@@ -780,16 +791,28 @@ img { display: block; max-width: 100%; height: auto; }
     border-bottom: 1px solid var(--color-border-default);
     display: none;
     padding: 1.5rem var(--space-gutter);
+    flex: none;
   }
 
   .site-nav.is-open { display: block; }
 
   .site-nav__list {
     flex-direction: column;
+    align-items: flex-start;
     gap: 1.25rem;
   }
 
-  .site-header__cta { display: none; }
+  .site-nav__link--projects {
+    position: static;
+    transform: none;
+  }
+
+  .site-nav__actions {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
 
   .site-header__inner { position: relative; }
 }

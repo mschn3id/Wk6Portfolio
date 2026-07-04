@@ -1,48 +1,48 @@
 ---
 title: Race Finder
-overline: [Category]
-description: [1–2 sentences for hero, meta description, and home page card]
-role: [Your role]
-timeline: [e.g. 2026, 2 weeks]
-tools: [HTML, CSS, JavaScript]
-team: [e.g. Solo product designer]
+overline: Race data search and tracking 
+description: Race Finder is an app users can use to find, save, and track their races using the RunSignup API. 
+role: Product designer
+timeline: 2026, 2 weeks 
+tools: HTML, CSS, JavaScript, API
+team: Solo product designer
 cover: assets/RF_Cover.png
-published app:
+published app: https://yournextracefinder.netlify.app/ 
 ---
 
 ## Overview
 
-[What is this project? Who is it for? 2–4 sentences.]
+This web app is for users that need help finding races based on their particular criteria, save them for future refrence and training, and mark as complete after they've ran the race. 
 
 ## Challenge
 
-[What problem or need does this address? 2–3 sentences.]
-
+Today, users have to do multiple internet searches in order to find a race that meets their needs. From there they have to save it to a spreadsheet and keep track of enrollment dates, costs, and timeline. Users need one place they can go to, to find, save, and track races according to their needs. 
 ## Process
 
-- [Caption for process image 1]
-- [Caption for process image 2]
-- [Caption for process image 3]
+- User lands on Race Finder home page where they can quickly and easily start a search
+- Upon search, users have the option to filter race results to further meet their needs
+- Upon save, the race is stored in the "My races" page for future reference and tracking 
 
 ## Solution
 
-[How does your project solve it? 2–3 sentences.]
+With Race Finder, users how have the ability to search, save and track all their races in one easy to access location. 
 
 ## Key features
 
-- [Feature one]
-- [Feature two]
-- [Feature three]
-- [Feature four]
+- Search and filter races based on user preference
+- Quick access to race details
+- Save races for training and tracking purposes 
+- Web responsive support 
 
 ## Gallery
-
-[Optional — add screenshots as markdown images or filename list]
+RF_Process_1.png
+RF_Process_2.png
+RF_Process_3.png
 
 ## Outcomes
-
-[What worked? What did you learn? 2–4 sentences.]
+A one stop shop for users to manage their race tracking needs. 
 
 ## Reflection
 
-[Optional — personal takeaway or what you'd do next.]
+As part of this work, I learned how to work with and connect APIs along with how to support 
+account creation and storage. 
