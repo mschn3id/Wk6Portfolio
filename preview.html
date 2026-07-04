@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saline Design System — Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Work+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --color-surface-base: #f4f4f4;
+      --color-surface-elevated: #ffffff;
+      --color-surface-inverse: #3d3d3d;
+      --color-text-primary: #3d3d3d;
+      --color-text-muted: rgba(61, 61, 61, 0.8);
+      --color-text-subtle: rgba(61, 61, 61, 0.25);
+      --color-text-inverse: #ffffff;
+      --color-accent-primary: #07b98a;
+      --color-accent-primary-hover: #058f6e;
+      --color-border-default: rgba(61, 61, 61, 0.2);
+      --color-border-light: rgba(0, 0, 0, 0.1);
+      --color-overlay-modal: rgba(35, 35, 35, 0.9);
+      --color-feedback-error: #ea384c;
+      --color-feedback-success: #07b98a;
+      --color-bloom-mint: #a8e6cf;
+      --color-bloom-blue: #b8d4e8;
+
+      --font-display: "Space Grotesk", system-ui, sans-serif;
+      --font-body: "Work Sans", system-ui, sans-serif;
+
+      --font-size-xs: 0.77rem;
+      --font-size-sm: 0.88rem;
+      --font-size-base: 1rem;
+      --font-size-md: 1.11rem;
+      --font-size-lg: 1.22rem;
+      --font-size-xl: 1.44rem;
+      --font-size-2xl: 1.77rem;
+      --font-size-3xl: clamp(2.5rem, 5vw, 4rem);
+      --font-size-4xl: clamp(3rem, 8vw, 5.5rem);
+      --font-size-rank: clamp(3rem, 6vw, 4.88rem);
+
+      --space-gutter: 20px;
+      --container-max: 1312px;
+      --space-4: 0.88rem;
+      --space-8: 2.5rem;
+      --space-16: 5.5rem;
+
+      --radius-none: 0;
+      --radius-full: 50%;
+
+      --duration-fast: 200ms;
+      --duration-base: 400ms;
+      --duration-moderate: 500ms;
+      --duration-slow: 800ms;
+      --ease-out-expo: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      font-size: clamp(16px, 1vw, 18px);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: var(--font-size-base);
+      font-weight: 300;
+      line-height: 1.5;
+      letter-spacing: -0.03em;
+      color: var(--color-text-primary);
+      background: var(--color-surface-base);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: var(--space-gutter);
+      z-index: 1000;
+      padding: 0.75rem 1rem;
+      background: var(--color-accent-primary-hover);
+      color: var(--color-text-inverse);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    /* Layout */
+    .preview-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--color-surface-elevated);
+      border-bottom: 1px solid var(--color-border-default);
+      padding: 1rem var(--space-gutter);
+    }
+    .preview-header__inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .preview-logo {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: var(--font-size-md);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      color: var(--color-text-primary);
+    }
+    .preview-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .preview-nav a {
+      color: var(--color-text-primary);
+      text-decoration: none;
+      font-size: var(--font-size-sm);
+    }
+    .preview-nav a:hover,
+    .preview-nav a:focus-visible {
+      color: var(--color-accent-primary);
+      outline: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: var(--space-gutter);
+    }
+
+    .section {
+      padding-block: var(--space-16);
+      position: relative;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: var(--font-size-3xl);
+      font-weight: 500;
+      text-transform: uppercase;
+      line-height: 1;
+      margin: 0 0 0.5rem;
+    }
+
+    .section-desc {
+      font-size: var(--font-size-lg);
+      color: var(--color-text-muted);
+      max-width: 40rem;
+      margin: 0 0 3rem;
+    }
+
+    .subsection {
+      margin-bottom: 3rem;
+    }
+
+    .subsection h3 {
+      font-family: var(--font-display);
+      font-size: var(--font-size-xl);
+      font-weight: 500;
+      margin: 0 0 1.25rem;
+    }
+
+    /* Blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.5;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .blob--mint {
+      width: 400px;
+      height: 400px;
+      background: var(--color-bloom-mint);
+      top: 10%;
+      right: -5%;
+    }
+    .blob--blue {
+      width: 350px;
+      height: 350px;
+      background: var(--color-bloom-blue);
+      bottom: 5%;
+      left: -5%;
+    }
+
+    /* Colors */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+    .color-swatch {
+      border: 1px solid var(--color-border-light);
+      background: var(--color-surface-elevated);
+      overflow: hidden;
+    }
+    .color-swatch__chip {
+      height: 80px;
+      background: var(--swatch);
+    }
+    .color-swatch__info {
+      padding: 0.75rem;
+      font-size: var(--font-size-xs);
+    }
+    .color-swatch__name {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Typography */
+    .type-specimen { margin-bottom: 2rem; }
+    .type-display {
+      font-family: var(--font-display);
+      font-size: var(--font-size-4xl);
+      font-weight: 500;
+      text-transform: uppercase;
+      line-height: 1;
+      margin: 0;
+    }
+    .type-h2 {
+      font-family: var(--font-display);
+      font-size: var(--font-size-3xl);
+      font-weight: 500;
+      text-transform: uppercase;
+      line-height: 1;
+      margin: 0 0 0.5rem;
+    }
+    .type-h3 {
+      font-family: var(--font-display);
+      font-size: var(--font-size-2xl);
+      font-weight: 500;
+      line-height: 1.1;
+      margin: 0 0 0.5rem;
+    }
+    .type-h4 {
+      font-family: var(--font-display);
+      font-size: var(--font-size-xl);
+      font-weight: 500;
+      line-height: 1.1;
+      margin: 0 0 0.5rem;
+    }
+    .type-body {
+      font-size: var(--font-size-lg);
+      line-height: 1.5;
+      max-width: 36rem;
+    }
+    .type-label {
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .type-meta {
+      font-size: var(--font-size-xs);
+      color: var(--color-text-muted);
+      margin-top: 0.5rem;
+    }
+
+    /* Spacing scale */
+    .spacing-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-end;
+    }
+    .spacing-item {
+      text-align: center;
+      font-size: var(--font-size-xs);
+    }
+    .spacing-bar {
+      background: var(--color-accent-primary);
+      opacity: 0.6;
+      margin-bottom: 0.5rem;
+      height: 24px;
+    }
+
+    /* Radius & shadow */
+    .radius-demo {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .radius-box {
+      width: 100px;
+      height: 100px;
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border-default);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-size-xs);
+    }
+
+    /* Grid demo */
+    .grid-demo {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0.5rem;
+    }
+    .grid-cell {
+      background: var(--color-accent-primary);
+      opacity: 0.2;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+    }
+    .grid-cell--span-4 { grid-column: span 4; }
+    .grid-cell--span-6 { grid-column: span 6; }
+    .grid-cell--span-8 { grid-column: span 8; }
+
+    /* Overflow hover buttons */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 2.66rem;
+      height: 3.55rem;
+      background: var(--color-accent-primary-hover);
+      color: var(--color-text-inverse);
+      font-family: var(--font-display);
+      font-size: var(--font-size-md);
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      position: relative;
+    }
+    .btn-primary:focus-visible {
+      outline: 2px solid var(--color-accent-primary);
+      outline-offset: 2px;
+    }
+
+    .overflow-btn {
+      display: inline-block;
+      overflow: hidden;
+      height: 1.6em;
+      line-height: 1.6em;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      font: inherit;
+      color: inherit;
+    }
+    .overflow-btn__stack {
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--duration-base);
+    }
+    .overflow-btn:hover .overflow-btn__stack,
+    .overflow-btn:focus-visible .overflow-btn__stack {
+      transform: translateY(-1.6em);
+    }
+    .overflow-btn:focus-visible {
+      outline: 2px solid var(--color-accent-primary);
+      outline-offset: 4px;
+    }
+
+    .btn-link {
+      display: inline-block;
+      border-bottom: 1px solid var(--color-accent-primary);
+      color: var(--color-accent-primary);
+      font-family: var(--font-display);
+      font-size: var(--font-size-md);
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-circle {
+      width: 6.38rem;
+      height: 6.38rem;
+      border-radius: var(--radius-full);
+      background: var(--color-accent-primary);
+      color: var(--color-text-inverse);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transform: rotate(12deg);
+      transition: transform var(--duration-slow);
+      border: none;
+      cursor: pointer;
+    }
+    .btn-circle:hover,
+    .btn-circle:focus-visible {
+      transform: scale(1.1) rotate(24deg);
+    }
+    .btn-circle:focus-visible {
+      outline: 2px solid var(--color-text-primary);
+      outline-offset: 4px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    /* Inputs */
+    .form-group { margin-bottom: 1.5rem; max-width: 32rem; }
+    .form-label {
+      display: block;
+      margin-bottom: 1.33rem;
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .form-inline {
+      display: flex;
+      gap: 0;
+      max-width: 32rem;
+    }
+    .input {
+      flex: 1;
+      height: 3.88rem;
+      padding: 0 1.44rem;
+      border: 0;
+      background: var(--color-surface-elevated);
+      font-family: var(--font-body);
+      font-size: var(--font-size-base);
+      letter-spacing: 0.03em;
+      color: var(--color-text-primary);
+    }
+    .input::placeholder { color: var(--color-text-subtle); transition: opacity var(--duration-base); }
+    .input:focus {
+      outline: 2px solid var(--color-accent-primary);
+      outline-offset: 0;
+    }
+    .input:focus::placeholder { opacity: 0; }
+
+    .input-standalone {
+      width: 100%;
+      height: 3.55rem;
+      padding: 0 1rem;
+      border: 0;
+      background: var(--color-surface-elevated);
+      font-family: var(--font-body);
+      font-size: var(--font-size-base);
+    }
+    .input-standalone:focus {
+      outline: 2px solid var(--color-accent-primary);
+      outline-offset: 2px;
+    }
+
+    /* Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0;
+    }
+    .product-card {
+      position: relative;
+      padding: 2rem 2.5rem 2rem 1.5rem;
+      background: transparent;
+      transition: background var(--duration-moderate);
+    }
+    .product-card:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 2.77rem;
+      bottom: 2.77rem;
+      right: 0;
+      width: 1px;
+      background: var(--color-border-light);
+    }
+    .product-card:hover { background: rgba(255,255,255,0.4); }
+    .product-card__overline {
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-text-subtle);
+      margin-bottom: 0.2rem;
+      transition: color var(--duration-moderate);
+    }
+    .product-card:hover .product-card__overline { color: var(--color-text-primary); }
+    .product-card__title {
+      font-family: var(--font-display);
+      font-size: var(--font-size-xl);
+      font-weight: 500;
+      margin: 0 0 1.5rem;
+    }
+    .product-card__img {
+      width: 100%;
+      max-width: 200px;
+      height: 200px;
+      object-fit: cover;
+      transition: transform var(--duration-base);
+    }
+    .product-card:hover .product-card__img { transform: scale(1.05); }
+
+    .founder-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      max-width: 20rem;
+    }
+    .founder-card__avatar {
+      width: 4.44rem;
+      height: 4.44rem;
+      border-radius: var(--radius-full);
+      object-fit: cover;
+      transition: transform var(--duration-moderate);
+    }
+    .founder-card:hover .founder-card__avatar { transform: scale(1.15); }
+    .founder-card__name {
+      font-family: var(--font-display);
+      font-size: var(--font-size-lg);
+      font-weight: 500;
+      margin: 0;
+    }
+    .founder-card__role {
+      font-size: var(--font-size-lg);
+      font-weight: 300;
+      color: var(--color-text-muted);
+    }
+
+    /* Navigation demo */
+    .nav-demo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.7rem 0;
+      border-bottom: 1px solid var(--color-border-default);
+      max-width: var(--container-max);
+    }
+    .nav-demo__logo {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: var(--font-size-md);
+      text-decoration: none;
+      color: var(--color-text-primary);
+    }
+    .nav-demo__links {
+      display: flex;
+      gap: 3.3rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-demo__links a {
+      color: var(--color-text-primary);
+      text-decoration: none;
+      font-size: 1.1em;
+      line-height: 1.8;
+    }
+    .nav-demo__cart {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 1.1rem;
+      text-decoration: none;
+      color: var(--color-text-primary);
+    }
+
+    /* Table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--font-size-base);
+    }
+    .data-table th {
+      text-align: left;
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 1rem;
+      border-bottom: 1px solid var(--color-border-default);
+    }
+    .data-table td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--color-border-light);
+    }
+    .data-table tbody tr:hover { background: rgba(255,255,255,0.5); }
+
+    /* Alerts */
+    .alert {
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+      max-width: 32rem;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .alert--success {
+      background: var(--color-surface-elevated);
+      border-left: 4px solid var(--color-feedback-success);
+    }
+    .alert--error {
+      background: #ffdede;
+      color: var(--color-feedback-error);
+    }
+
+    /* Modal */
+    .modal-trigger { margin-top: 1rem; }
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--color-overlay-modal);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-gutter);
+    }
+    .modal-overlay.is-open { display: flex; }
+    .modal {
+      background: var(--color-surface-elevated);
+      max-width: 480px;
+      width: 100%;
+      padding: 2.5rem;
+      position: relative;
+      transform: scale(0.95);
+      transition: transform var(--duration-moderate) var(--ease-out-expo);
+    }
+    .modal-overlay.is-open .modal { transform: scale(1); }
+    .modal__close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: var(--color-text-primary);
+    }
+    .modal__close:focus-visible {
+      outline: 2px solid var(--color-accent-primary);
+      outline-offset: 2px;
+    }
+    .modal__title {
+      font-family: var(--font-display);
+      font-size: var(--font-size-xl);
+      margin: 0 0 0.5rem;
+    }
+
+    /* Dropdown */
+    .dropdown { position: relative; display: inline-block; }
+    .dropdown__menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 180px;
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border-default);
+      list-style: none;
+      margin: 0.25rem 0 0;
+      padding: 0.5rem 0;
+      z-index: 10;
+    }
+    .dropdown.is-open .dropdown__menu { display: block; }
+    .dropdown__menu a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: var(--color-text-primary);
+      text-decoration: none;
+    }
+    .dropdown__menu a:hover,
+    .dropdown__menu a:focus-visible {
+      background: var(--color-surface-base);
+      outline: none;
+    }
+
+    /* Motion demos */
+    .motion-demo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+    .motion-box {
+      width: 120px;
+      height: 120px;
+      background: var(--color-accent-primary);
+      opacity: 0.8;
+      transition: transform var(--duration-base), opacity var(--duration-base);
+    }
+    .motion-box:hover {
+      transform: translateY(-8px) scale(1.05);
+      opacity: 1;
+    }
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--color-border-default);
+      border-top-color: var(--color-accent-primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .illustration-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
+      background: var(--color-surface-elevated);
+      border: 1px dashed var(--color-border-default);
+      color: var(--color-text-muted);
+      font-size: var(--font-size-sm);
+      text-align: center;
+      padding: 2rem;
+    }
+
+    /* Accessibility demos */
+    .contrast-pair {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .contrast-sample {
+      padding: 1.5rem;
+      min-width: 200px;
+      font-size: var(--font-size-lg);
+    }
+    .contrast-sample--pass {
+      background: var(--color-surface-base);
+      color: var(--color-text-primary);
+    }
+    .contrast-sample--warn {
+      background: var(--color-surface-elevated);
+      color: var(--color-accent-primary);
+      font-weight: 700;
+      font-size: var(--font-size-xl);
+    }
+    .contrast-sample--btn {
+      background: var(--color-accent-primary-hover);
+      color: var(--color-text-inverse);
+      font-family: var(--font-display);
+      font-weight: 500;
+    }
+
+    .focus-demo:focus-visible {
+      outline: 2px solid var(--color-accent-primary);
+      outline-offset: 3px;
+    }
+
+    /* Reduced motion note */
+    .reduced-motion-demo {
+      padding: 1rem;
+      background: var(--color-surface-elevated);
+      border-left: 4px solid var(--color-accent-primary);
+      font-size: var(--font-size-sm);
+      max-width: 36rem;
+    }
+
+    /* Hero preview block */
+    .hero-preview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      min-height: 60vh;
+      position: relative;
+      z-index: 1;
+    }
+    @media (max-width: 768px) {
+      .hero-preview { grid-template-columns: 1fr; }
+      .nav-demo__links { display: none; }
+    }
+
+    .rank-item {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .rank-item__num {
+      font-family: var(--font-display);
+      font-size: var(--font-size-rank);
+      font-weight: 400;
+      line-height: 1;
+      color: var(--color-text-subtle);
+    }
+
+    code {
+      font-size: var(--font-size-xs);
+      background: rgba(0,0,0,0.06);
+      padding: 0.15em 0.4em;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .motion-box:hover { transform: none; }
+      .overflow-btn:hover .overflow-btn__stack { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="preview-header">
+    <div class="preview-header__inner">
+      <a href="#" class="preview-logo">Saline DS</a>
+      <nav aria-label="Style guide sections">
+        <ul class="preview-nav">
+          <li><a href="#foundation">Foundation</a></li>
+          <li><a href="#layout">Layout</a></li>
+          <li><a href="#components">Components</a></li>
+          <li><a href="#motion">Motion</a></li>
+          <li><a href="#accessibility">A11y</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero specimen -->
+    <section class="section" style="padding-top: 3rem;">
+      <div class="blob blob--mint"></div>
+      <div class="blob blob--blue"></div>
+      <div class="container hero-preview">
+        <div>
+          <p class="type-label">Design System Preview</p>
+          <h1 class="type-display">Mineral<br>Level<br>Raised</h1>
+          <p class="type-body">An original wellness-commerce language inspired by editorial salt-care aesthetics — spacious, calm, and ingredient-forward.</p>
+        </div>
+        <div>
+          <img
+            src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&h=700&fit=crop"
+            alt="Skincare product on neutral surface"
+            width="400"
+            height="470"
+            style="width:100%;max-width:400px;height:auto;object-fit:cover;"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Foundation -->
+    <section id="foundation" class="section">
+      <div class="container">
+        <h2 class="section-title">Foundation</h2>
+        <p class="section-desc">Core tokens from DESIGN.md — colors, typography, spacing, radius, and shadow scales.</p>
+
+        <div class="subsection">
+          <h3>Color Palette</h3>
+          <div class="color-grid">
+            <div class="color-swatch"><div class="color-swatch__chip" style="--swatch:#f4f4f4;background:#f4f4f4"></div><div class="color-swatch__info"><span class="color-swatch__name">surface-base</span>#f4f4f4</div></div>
+            <div class="color-swatch"><div class="color-swatch__chip" style="--swatch:#ffffff;background:#fff"></div><div class="color-swatch__info"><span class="color-swatch__name">surface-elevated</span>#ffffff</div></div>
+            <div class="color-swatch"><div class="color-swatch__chip" style="--swatch:#3d3d3d;background:#3d3d3d"></div><div class="color-swatch__info"><span class="color-swatch__name">text / inverse</span>#3d3d3d</div></div>
+            <div class="color-swatch"><div class="color-swatch__chip" style="--swatch:#07b98a;background:#07b98a"></div><div class="color-swatch__info"><span class="color-swatch__name">accent-primary</span>#07b98a</div></div>
+            <div class="color-swatch"><div class="color-swatch__chip" style="--swatch:#058f6e;background:#058f6e"></div><div class="color-swatch__info"><span class="color-swatch__name">accent-hover (AA)</span>#058f6e</div></div>
+            <div class="color-swatch"><div class="color-swatch__chip" style="--swatch:#a8e6cf;background:#a8e6cf"></div><div class="color-swatch__info"><span class="color-swatch__name">bloom-mint</span>#a8e6cf</div></div>
+            <div class="color-swatch"><div class="color-swatch__chip" style="--swatch:#b8d4e8;background:#b8d4e8"></div><div class="color-swatch__info"><span class="color-swatch__name">bloom-blue</span>#b8d4e8</div></div>
+            <div class="color-swatch"><div class="color-swatch__chip" style="--swatch:#ea384c;background:#ea384c"></div><div class="color-swatch__info"><span class="color-swatch__name">feedback-error</span>#ea384c</div></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Typography Scale</h3>
+          <div class="type-specimen">
+            <p class="type-display">Display Hero</p>
+            <p class="type-meta">Space Grotesk · 5.5rem · 500 · uppercase</p>
+          </div>
+          <div class="type-specimen">
+            <p class="type-h2">Section Title</p>
+            <p class="type-meta">Space Grotesk · 4rem · 500 · uppercase</p>
+          </div>
+          <div class="type-specimen">
+            <p class="type-h3">Card Heading</p>
+            <p class="type-meta">Space Grotesk · 1.77rem · 500</p>
+          </div>
+          <div class="type-specimen">
+            <p class="type-h4">Subheading</p>
+            <p class="type-meta">Space Grotesk · 1.44rem · 500</p>
+          </div>
+          <div class="type-specimen">
+            <p class="type-body">Body copy uses Work Sans at 1.22rem with 150% line height and tight letter-spacing for a relaxed editorial feel.</p>
+            <p class="type-meta">Work Sans · 1.22rem · 300</p>
+          </div>
+          <div class="type-specimen">
+            <p class="type-label">Overline Label</p>
+            <p class="type-meta">Work Sans · 0.77rem · 700 · 0.2em tracking</p>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Spacing Scale</h3>
+          <div class="spacing-row">
+            <div class="spacing-item"><div class="spacing-bar" style="width:0.88rem"></div>0.88rem</div>
+            <div class="spacing-item"><div class="spacing-bar" style="width:1.33rem"></div>1.33rem</div>
+            <div class="spacing-item"><div class="spacing-bar" style="width:2.5rem"></div>2.5rem</div>
+            <div class="spacing-item"><div class="spacing-bar" style="width:3.3rem"></div>3.3rem</div>
+            <div class="spacing-item"><div class="spacing-bar" style="width:5.5rem"></div>5.5rem</div>
+            <div class="spacing-item"><div class="spacing-bar" style="width:10rem"></div>10rem</div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Radius &amp; Shadow</h3>
+          <div class="radius-demo">
+            <div class="radius-box" style="border-radius:0">0 — inputs</div>
+            <div class="radius-box" style="border-radius:50%">50% — avatars</div>
+          </div>
+          <p class="type-meta" style="margin-top:1rem">Shadows are minimal; depth comes from color blooms and borders.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section id="layout" class="section" style="background:rgba(255,255,255,0.3)">
+      <div class="container">
+        <h2 class="section-title">Layout</h2>
+        <p class="section-desc">1312px max container, 20px gutters, 12-column grid, asymmetric editorial columns.</p>
+
+        <div class="subsection">
+          <h3>12-Column Grid</h3>
+          <div class="grid-demo" role="img" aria-label="12 column grid demonstration">
+            <div class="grid-cell grid-cell--span-4">4 col</div>
+            <div class="grid-cell grid-cell--span-4">4 col</div>
+            <div class="grid-cell grid-cell--span-4">4 col</div>
+            <div class="grid-cell grid-cell--span-6">6 col</div>
+            <div class="grid-cell grid-cell--span-6">6 col</div>
+            <div class="grid-cell grid-cell--span-8">8 col</div>
+            <div class="grid-cell grid-cell--span-4">4 col</div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Ranked List Pattern</h3>
+          <div class="rank-item">
+            <span class="rank-item__num">№1</span>
+            <div>
+              <h3 class="type-h3" style="margin:0">Mineral Body Polish</h3>
+              <p class="type-body" style="font-size:var(--font-size-base);color:var(--color-text-muted)">Gently exfoliates with pure mineral salts.</p>
+            </div>
+          </div>
+          <div class="rank-item">
+            <span class="rank-item__num">№2</span>
+            <div>
+              <h3 class="type-h3" style="margin:0">Ocean Face Refine</h3>
+              <p class="type-body" style="font-size:var(--font-size-base);color:var(--color-text-muted)">Balances skin with trace elements.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Illustration Placeholder</h3>
+          <div class="illustration-placeholder">
+            Custom illustration placeholder.<br>Original artwork should be created separately.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Components -->
+    <section id="components" class="section">
+      <div class="container">
+        <h2 class="section-title">Components</h2>
+        <p class="section-desc">Interactive patterns with overflow hover, inline forms, cards, navigation, and feedback.</p>
+
+        <div class="subsection">
+          <h3>Navigation</h3>
+          <nav class="nav-demo" aria-label="Primary example">
+            <a href="#" class="nav-demo__logo">Brand</a>
+            <ul class="nav-demo__links">
+              <li>
+                <a href="#" class="overflow-btn">
+                  <span class="overflow-btn__stack">
+                    <span>Shop</span><span>Shop</span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="overflow-btn">
+                  <span class="overflow-btn__stack">
+                    <span>Collection</span><span>Collection</span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="overflow-btn">
+                  <span class="overflow-btn__stack">
+                    <span>About</span><span>About</span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <a href="#" class="nav-demo__cart">Cart (0)</a>
+          </nav>
+        </div>
+
+        <div class="subsection">
+          <h3>Buttons</h3>
+          <div class="btn-row">
+            <button type="button" class="btn-primary overflow-btn">
+              <span class="overflow-btn__stack">
+                <span>Subscribe</span><span>Subscribe</span>
+              </span>
+            </button>
+            <a href="#" class="btn-link overflow-btn">
+              <span class="overflow-btn__stack">
+                <span>Read more</span><span>Read more</span>
+              </span>
+            </a>
+            <button type="button" class="btn-circle" aria-label="New product badge">New!</button>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Inputs &amp; Forms</h3>
+          <div class="form-group">
+            <label class="form-label" for="catalogue-email">Get the catalogue</label>
+            <div class="form-inline">
+              <input type="email" id="catalogue-email" class="input" placeholder="Enter your email" required aria-describedby="email-hint">
+              <button type="button" class="btn-primary overflow-btn">
+                <span class="overflow-btn__stack">
+                  <span>Sign up</span><span>Sign up</span>
+                </span>
+              </button>
+            </div>
+            <p id="email-hint" class="type-meta">Placeholder fades on focus.</p>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="newsletter-email">Newsletter</label>
+            <input type="email" id="newsletter-email" class="input-standalone focus-demo" placeholder="Email address">
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Product Cards</h3>
+          <div class="card-grid">
+            <article class="product-card">
+              <p class="product-card__overline">Hydration</p>
+              <h4 class="product-card__title">Sea Mist Toner</h4>
+              <img class="product-card__img" src="https://images.unsplash.com/photo-1620916566395-659695608883?w=400&h=400&fit=crop" alt="Glass bottle skincare product" width="200" height="200">
+            </article>
+            <article class="product-card">
+              <p class="product-card__overline">Exfoliation</p>
+              <h4 class="product-card__title">Crystal Body Polish</h4>
+              <img class="product-card__img" src="https://images.unsplash.com/photo-1608248543801-ba9776596460?w=400&h=400&fit=crop" alt="Jar of body scrub" width="200" height="200">
+            </article>
+            <article class="product-card">
+              <p class="product-card__overline">Renewal</p>
+              <h4 class="product-card__title">Mineral Face Peel</h4>
+              <img class="product-card__img" src="https://images.unsplash.com/photo-1570194065650-d99fb4b31108?w=400&h=400&fit=crop" alt="Skincare tube product" width="200" height="200">
+            </article>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Founder Card</h3>
+          <a href="#" class="founder-card" style="text-decoration:none;color:inherit">
+            <img class="founder-card__avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=160&h=160&fit=crop" alt="" width="80" height="80">
+            <div>
+              <p class="founder-card__name">Alex Rivera</p>
+              <p class="founder-card__role">Formulator</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="subsection">
+          <h3>Table</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th scope="col">Ingredient</th>
+                <th scope="col">Benefit</th>
+                <th scope="col">Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Marine salt</td>
+                <td>Sebum balance</td>
+                <td>Atlantic coast</td>
+              </tr>
+              <tr>
+                <td>Epsom salt</td>
+                <td>Muscle ease</td>
+                <td>Mineral springs</td>
+              </tr>
+              <tr>
+                <td>Blue clay</td>
+                <td>Pore refinement</td>
+                <td>Coastal deposits</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="subsection">
+          <h3>Alerts</h3>
+          <div class="alert alert--success" role="status">
+            <i data-lucide="check-circle" aria-hidden="true"></i>
+            <span>Your subscription was received successfully.</span>
+          </div>
+          <div class="alert alert--error" role="alert">
+            <i data-lucide="alert-circle" aria-hidden="true"></i>
+            <span>Something went wrong. Please try again.</span>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Modal</h3>
+          <button type="button" class="btn-primary modal-trigger focus-demo" id="open-modal" aria-haspopup="dialog">Open modal</button>
+          <div class="modal-overlay" id="modal-overlay" role="presentation">
+            <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+              <button type="button" class="modal__close focus-demo" id="close-modal" aria-label="Close dialog">
+                <i data-lucide="x"></i>
+              </button>
+              <h4 class="modal__title" id="modal-title">Join the list</h4>
+              <p>Get updates on new mineral-care formulations.</p>
+              <input type="email" class="input-standalone" placeholder="Email address" style="margin-top:1rem">
+              <button type="button" class="btn-primary" style="margin-top:1rem;width:100%">Subscribe</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Dropdown</h3>
+          <div class="dropdown" id="dropdown">
+            <button type="button" class="btn-primary overflow-btn" id="dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+              <span class="overflow-btn__stack">
+                <span>Shop category</span><span>Shop category</span>
+              </span>
+            </button>
+            <ul class="dropdown__menu" role="menu">
+              <li role="none"><a href="#" role="menuitem">Body care</a></li>
+              <li role="none"><a href="#" role="menuitem">Face care</a></li>
+              <li role="none"><a href="#" role="menuitem">Hair care</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Motion -->
+    <section id="motion" class="section" style="background:rgba(255,255,255,0.3)">
+      <div class="container">
+        <h2 class="section-title">Motion</h2>
+        <p class="section-desc">400ms default transitions, overflow text slides, hover lift, and loading spinner.</p>
+
+        <div class="subsection">
+          <h3>Hover &amp; Transition</h3>
+          <div class="motion-demo">
+            <div class="motion-box" tabindex="0" aria-label="Hover lift demo"></div>
+            <div class="spinner" role="status" aria-label="Loading"></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Reduced Motion</h3>
+          <div class="reduced-motion-demo">
+            When <code>prefers-reduced-motion: reduce</code> is active, animations and smooth scroll are disabled. Parallax sections should render as a linear stack.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accessibility -->
+    <section id="accessibility" class="section">
+      <div class="container">
+        <h2 class="section-title">Accessibility</h2>
+        <p class="section-desc">Contrast pairs, focus states, and keyboard-operable components.</p>
+
+        <div class="subsection">
+          <h3>Contrast Examples</h3>
+          <div class="contrast-pair">
+            <div class="contrast-sample contrast-sample--pass">
+              <strong>AAA pass</strong><br>
+              #3d3d3d on #f4f4f4
+            </div>
+            <div class="contrast-sample contrast-sample--warn">
+              Accent large text only
+            </div>
+            <div class="contrast-sample contrast-sample--btn">
+              AA button<br>#058f6e
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Focus States</h3>
+          <p class="type-body">Tab through interactive elements on this page. All controls use a 2px accent outline with offset.</p>
+          <button type="button" class="btn-primary focus-demo">Focusable button</button>
+        </div>
+
+        <div class="subsection">
+          <h3>Keyboard Navigation</h3>
+          <p class="type-body">Modal: <kbd>Escape</kbd> closes. Dropdown: <kbd>Enter</kbd> toggles, links are tabbable. Skip link appears on first Tab.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:var(--color-surface-inverse);color:var(--color-text-inverse);padding:2rem var(--space-gutter);text-align:center;font-size:var(--font-size-sm)">
+    <p style="margin:0">Saline Design System · Inspired by editorial wellness references · Not affiliated with any source brand</p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Modal
+    const openModal = document.getElementById('open-modal');
+    const closeModal = document.getElementById('close-modal');
+    const overlay = document.getElementById('modal-overlay');
+    let lastFocus;
+
+    openModal.addEventListener('click', () => {
+      lastFocus = document.activeElement;
+      overlay.classList.add('is-open');
+      closeModal.focus();
+    });
+
+    function closeModalFn() {
+      overlay.classList.remove('is-open');
+      if (lastFocus) lastFocus.focus();
+    }
+
+    closeModal.addEventListener('click', closeModalFn);
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeModalFn();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModalFn();
+    });
+
+    // Dropdown
+    const dropdown = document.getElementById('dropdown');
+    const dropdownTrigger = document.getElementById('dropdown-trigger');
+
+    dropdownTrigger.addEventListener('click', () => {
+      const open = dropdown.classList.toggle('is-open');
+      dropdownTrigger.setAttribute('aria-expanded', open);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('is-open');
+        dropdownTrigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+</body>
+</html>

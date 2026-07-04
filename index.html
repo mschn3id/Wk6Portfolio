@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of vibe coding projects — web apps built with curiosity and craft.">
+  <title>McKenzie Schneider — Vibe Coding Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Work+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="page-bg" aria-hidden="true">
+    <div class="blob blob--mint"></div>
+    <div class="blob blob--blue"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="site-logo">MS</a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li>
+            <a href="index.html" class="site-nav__link overflow-btn" aria-current="page">
+              <span class="overflow-btn__stack">
+                <span>Home</span>
+                <span>Home</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="about/index.html" class="site-nav__link overflow-btn">
+              <span class="overflow-btn__stack">
+                <span>About</span>
+                <span>About</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="contact/index.html" class="site-nav__link overflow-btn">
+              <span class="overflow-btn__stack">
+                <span>Contact</span>
+                <span>Contact</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="site-header__cta">
+        <a href="contact/index.html" class="overflow-btn site-nav__link">
+          <span class="overflow-btn__stack">
+            <span>Say hello</span>
+            <span>Say hello</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="section section--hero">
+      <div class="container hero">
+        <div class="hero__content">
+          <p class="type-label">Vibe Coding Portfolio</p>
+          <h1 class="type-display">Build<br>With<br>Intent</h1>
+          <p class="type-body">A collection of web projects shaped by curiosity, iteration, and the joy of making things work — from task tools to race finders and trend trackers.</p>
+          <a href="#projects" class="btn-primary">View projects</a>
+        </div>
+        <div class="hero__visual">
+          <img
+            class="hero__image"
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=750&fit=crop"
+            alt="Laptop with code on screen in a calm workspace"
+            width="440"
+            height="550"
+          >
+          <span class="hero__rank" aria-hidden="true">01</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Header -->
+    <section class="section" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <p class="type-label">Selected work</p>
+        <h2 class="section-title" id="projects-heading">Featured Projects</h2>
+        <p class="section-desc">Three apps built through vibe coding — rapid prototyping, real problems, and polished interfaces.</p>
+
+        <div class="project-grid">
+          <a href="TaskTracker/index.html" class="project-card">
+            <span class="project-card__overline">Productivity</span>
+            <h3 class="project-card__title">Task Tracker</h3>
+            <p class="project-card__desc">A focused task management app for capturing, organizing, and completing daily work with a calm, distraction-free interface.</p>
+            <div class="project-card__img-wrap">
+              <img
+                class="project-card__img"
+                src="TaskTracker/assets/TT_Cover.png"
+                alt="Task Tracker project preview"
+                width="280"
+                height="175"
+                loading="lazy"
+              >
+            </div>
+            <span class="project-card__link">View project <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+          </a>
+
+          <a href="RaceFinder/index.html" class="project-card">
+            <span class="project-card__overline">Race data search and tracking</span>
+            <h3 class="project-card__title">Race Finder</h3>
+            <p class="project-card__desc">Race Finder is an app users can use to find, save, and track their races using the RunSignup API.</p>
+            <div class="project-card__img-wrap">
+              <img
+                class="project-card__img"
+                src="RaceFinder/assets/RF_Cover.png"
+                alt="Race Finder project preview"
+                width="280"
+                height="175"
+                loading="lazy"
+              >
+            </div>
+            <span class="project-card__link">View project <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+          </a>
+
+          <a href="BuzzTracker/assets/index.html" class="project-card">
+            <span class="project-card__overline">Caffeine data analysis</span>
+            <h3 class="project-card__title">Buzz Tracker</h3>
+            <p class="project-card__desc">A simple, fun, and easy to use caffeine tracker to track your regular intake.</p>
+            <div class="project-card__img-wrap">
+              <img
+                class="project-card__img"
+                src="BuzzTracker/assets/BT_Cover.png"
+                alt="Buzz Tracker project preview"
+                width="280"
+                height="175"
+                loading="lazy"
+              >
+            </div>
+            <span class="project-card__link">View project <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <p class="site-footer__cta">
+          Have a project in mind?<br>
+          <a href="contact/index.html" class="site-footer__cta-link overflow-btn">
+            <span class="overflow-btn__stack">
+              <span>Let's talk</span>
+              <span>Let's talk</span>
+            </span>
+          </a>
+        </p>
+        <div class="site-footer__columns">
+          <div>
+            <p class="site-footer__heading">Website map</p>
+            <ul class="site-footer__links">
+              <li>
+                <a href="index.html" class="overflow-btn">
+                  <span class="overflow-btn__stack"><span>Home</span><span>Home</span></span>
+                </a>
+              </li>
+              <li>
+                <a href="about/index.html" class="overflow-btn">
+                  <span class="overflow-btn__stack"><span>About</span><span>About</span></span>
+                </a>
+              </li>
+              <li>
+                <a href="contact/index.html" class="overflow-btn">
+                  <span class="overflow-btn__stack"><span>Contact</span><span>Contact</span></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="site-footer__heading">Projects</p>
+            <ul class="site-footer__links">
+              <li>
+                <a href="TaskTracker/index.html" class="overflow-btn">
+                  <span class="overflow-btn__stack"><span>Task Tracker</span><span>Task Tracker</span></span>
+                </a>
+              </li>
+              <li>
+                <a href="RaceFinder/index.html" class="overflow-btn">
+                  <span class="overflow-btn__stack"><span>Race Finder</span><span>Race Finder</span></span>
+                </a>
+              </li>
+              <li>
+                <a href="BuzzTracker/assets/index.html" class="overflow-btn">
+                  <span class="overflow-btn__stack"><span>Buzz Tracker</span><span>Buzz Tracker</span></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>&copy; 2026 McKenzie Schneider</span>
+        <span>Vibe coding portfolio</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open);
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+    }
+  </script>
+</body>
+</html>

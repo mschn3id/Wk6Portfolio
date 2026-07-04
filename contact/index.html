@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with McKenzie Schneider — collaborations, feedback, and project inquiries.">
+  <title>Contact — McKenzie Schneider</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Work+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="page-bg" aria-hidden="true">
+    <div class="blob blob--mint"></div>
+    <div class="blob blob--blue"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../index.html" class="site-logo">MS</a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li>
+            <a href="../index.html" class="site-nav__link overflow-btn">
+              <span class="overflow-btn__stack"><span>Home</span><span>Home</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="../about/index.html" class="site-nav__link overflow-btn">
+              <span class="overflow-btn__stack"><span>About</span><span>About</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="index.html" class="site-nav__link overflow-btn" aria-current="page">
+              <span class="overflow-btn__stack"><span>Contact</span><span>Contact</span></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="site-header__cta">
+        <a href="index.html" class="overflow-btn site-nav__link">
+          <span class="overflow-btn__stack"><span>Say hello</span><span>Say hello</span></span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section section--hero">
+      <div class="container page-header">
+        <p class="type-label">Get in touch</p>
+        <h1 class="type-display">Say<br>Hello</h1>
+        <p class="type-body">Have feedback on a project, a collaboration idea, or just want to connect? Send a message — I read every one.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="contact-form-heading">
+      <div class="container contact-grid">
+        <form id="contact-form" novalidate>
+          <h2 class="type-h3" id="contact-form-heading">Send a message</h2>
+
+          <div class="form-group">
+            <label class="form-label" for="name">Your name</label>
+            <input class="input" type="text" id="name" name="name" placeholder="Jane Doe" autocomplete="name" required>
+            <p class="form-error" id="name-error" role="alert">Please enter your name.</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Email address</label>
+            <input class="input" type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+            <p class="form-error" id="email-error" role="alert">Please enter a valid email address.</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="subject">Subject</label>
+            <input class="input" type="text" id="subject" name="subject" placeholder="Project inquiry" required>
+            <p class="form-error" id="subject-error" role="alert">Please enter a subject.</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="textarea" id="message" name="message" placeholder="Tell me about your idea..." required></textarea>
+            <p class="form-error" id="message-error" role="alert">Please enter a message.</p>
+          </div>
+
+          <button type="submit" class="btn-primary">Send message</button>
+        </form>
+
+        <div class="contact-info">
+          <h2 class="type-h3">Other ways to reach me</h2>
+          <p class="prose">Prefer email or social? Here are direct links. I typically respond within a few days.</p>
+
+          <ul class="contact-info__list">
+            <li class="contact-info__item">
+              <span class="contact-info__label">Email</span>
+              <a class="contact-info__value" href="mailto:hello@mckenzieschneider.com">hello@mckenzieschneider.com</a>
+            </li>
+            <li class="contact-info__item">
+              <span class="contact-info__label">GitHub</span>
+              <a class="contact-info__value" href="https://github.com/mckenzieschneider" target="_blank" rel="noopener noreferrer">@mckenzieschneider</a>
+            </li>
+            <li class="contact-info__item">
+              <span class="contact-info__label">Location</span>
+              <span class="contact-info__value">Iowa City, IA</span>
+            </li>
+            <li class="contact-info__item">
+              <span class="contact-info__label">Availability</span>
+              <span class="contact-info__value">Open to collaborations</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <p class="site-footer__cta">
+          Have a project in mind?<br>
+          <a href="index.html" class="site-footer__cta-link overflow-btn">
+            <span class="overflow-btn__stack"><span>Let's talk</span><span>Let's talk</span></span>
+          </a>
+        </p>
+        <div class="site-footer__columns">
+          <div>
+            <p class="site-footer__heading">Website map</p>
+            <ul class="site-footer__links">
+              <li><a href="../index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>Home</span><span>Home</span></span></a></li>
+              <li><a href="../about/index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>About</span><span>About</span></span></a></li>
+              <li><a href="index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>Contact</span><span>Contact</span></span></a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="site-footer__heading">Projects</p>
+            <ul class="site-footer__links">
+              <li><a href="../TaskTracker/index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>Task Tracker</span><span>Task Tracker</span></span></a></li>
+              <li><a href="../RaceFinder/index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>Race Finder</span><span>Race Finder</span></span></a></li>
+              <li><a href="../BuzzTracker/assets/index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>Buzz Tracker</span><span>Buzz Tracker</span></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>&copy; 2026 McKenzie Schneider</span>
+        <span>Vibe coding portfolio</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open);
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+    }
+
+    const form = document.getElementById('contact-form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let valid = true;
+
+        const fields = [
+          { id: 'name', test: (v) => v.trim().length > 0 },
+          { id: 'email', test: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) },
+          { id: 'subject', test: (v) => v.trim().length > 0 },
+          { id: 'message', test: (v) => v.trim().length > 0 },
+        ];
+
+        fields.forEach(({ id, test }) => {
+          const input = document.getElementById(id);
+          const error = document.getElementById(id + '-error');
+          const ok = test(input.value);
+          error.classList.toggle('is-visible', !ok);
+          if (!ok) valid = false;
+        });
+
+        if (valid) {
+          const btn = form.querySelector('.btn-primary');
+          btn.textContent = 'Message sent!';
+          btn.disabled = true;
+          form.reset();
+        }
+      });
+    }
+  </script>
+</body>
+</html>

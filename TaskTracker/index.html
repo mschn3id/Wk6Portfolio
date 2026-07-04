@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A focused task management app for capturing, organizing, and completing daily work with a calm, distraction-free interface.">
+  <title>Task Tracker — McKenzie Schneider</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Work+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="page-bg" aria-hidden="true">
+    <div class="blob blob--mint"></div>
+    <div class="blob blob--blue"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../index.html" class="site-logo">MS</a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li>
+            <a href="../index.html" class="site-nav__link overflow-btn">
+              <span class="overflow-btn__stack"><span>Home</span><span>Home</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="../about/index.html" class="site-nav__link overflow-btn">
+              <span class="overflow-btn__stack"><span>About</span><span>About</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="../contact/index.html" class="site-nav__link overflow-btn">
+              <span class="overflow-btn__stack"><span>Contact</span><span>Contact</span></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="site-header__cta">
+        <a href="../contact/index.html" class="overflow-btn site-nav__link">
+          <span class="overflow-btn__stack"><span>Say hello</span><span>Say hello</span></span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section section--hero">
+      <div class="container hero">
+        <div class="hero__content">
+          <p class="type-label">Productivity</p>
+          <h1 class="type-display">Task<br>Tracker</h1>
+          <p class="type-body">A focused task management app for capturing, organizing, and completing daily work with a calm, distraction-free interface.</p>
+          <a href="https://trackerzapp.netlify.app/" class="btn-primary" target="_blank" rel="noopener noreferrer">View live app</a>
+        </div>
+        <div class="hero__visual">
+          <img
+            class="hero__image"
+            src="assets/TT_Hero.png"
+            alt="Task Tracker hero screenshot — task list interface"
+            width="440"
+            height="550"
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="meta-heading">
+      <div class="container">
+        <p class="type-label">Project details</p>
+        <h2 class="section-title" id="meta-heading">At a glance</h2>
+        <ul class="project-meta" role="list">
+          <li class="project-meta__item">
+            <span class="project-meta__label">Role</span>
+            <span class="project-meta__value">Product designer</span>
+          </li>
+          <li class="project-meta__item">
+            <span class="project-meta__label">Timeline</span>
+            <span class="project-meta__value">2026, 2 weeks</span>
+          </li>
+          <li class="project-meta__item">
+            <span class="project-meta__label">Tools</span>
+            <span class="project-meta__value">HTML, CSS, JavaScript, Local Storage</span>
+          </li>
+          <li class="project-meta__item">
+            <span class="project-meta__label">Team</span>
+            <span class="project-meta__value">Solo product designer</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="overview-heading">
+      <div class="container" style="max-width: 48rem;">
+        <p class="type-label">Context</p>
+        <h2 class="section-title" id="overview-heading">Overview</h2>
+        <div class="prose">
+          <p>TaskTracker is a lightweight productivity app built for people who want to stay on top of daily work without the noise of heavyweight project tools. The interface prioritizes clarity — tasks are easy to add, sort, and complete so attention stays on what matters.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: rgba(255,255,255,0.3);" aria-labelledby="challenge-heading">
+      <div class="container" style="max-width: 48rem;">
+        <p class="type-label">Challenge</p>
+        <h2 class="section-title" id="challenge-heading">The challenge</h2>
+        <div class="prose">
+          <p>Most task apps overwhelm users with boards, tags, integrations, and settings before a single item gets done. I needed a tool that felt simple and easy from the first interaction: fast capture, obvious status, and a layout that doesn't compete with the work itself.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="process-heading">
+      <div class="container">
+        <p class="type-label">How it was built</p>
+        <h2 class="section-title" id="process-heading">Process</h2>
+        <div class="process-grid">
+          <figure class="process-item">
+            <img
+              class="process-item__img"
+              src="assets/TT_Process_1.png"
+              alt="Task Tracker process step 1 — defining the core user flow"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <figcaption class="process-item__caption">
+              <span class="process-item__step" aria-hidden="true">01</span>
+              Defined the core user flow — capture, organize, complete — before writing any code
+            </figcaption>
+          </figure>
+          <figure class="process-item">
+            <img
+              class="process-item__img"
+              src="assets/TT_Process_2.png"
+              alt="Task Tracker process step 2 — wireframes and design tokens"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <figcaption class="process-item__caption">
+              <span class="process-item__step" aria-hidden="true">02</span>
+              Sketched wireframes and applied the Saline design tokens for typography and color
+            </figcaption>
+          </figure>
+          <figure class="process-item">
+            <img
+              class="process-item__img"
+              src="assets/TT_Process_3.png"
+              alt="Task Tracker process step 3 — interactive prototype"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <figcaption class="process-item__caption">
+              <span class="process-item__step" aria-hidden="true">03</span>
+              Built the interactive prototype with vanilla JavaScript and local storage
+            </figcaption>
+          </figure>
+          <figure class="process-item">
+            <img
+              class="process-item__img"
+              src="assets/TT_Process_4.png"
+              alt="Task Tracker process step 4 — spacing and interaction refinement"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <figcaption class="process-item__caption">
+              <span class="process-item__step" aria-hidden="true">04</span>
+              Refined spacing, hover states, and empty-state messaging through iteration
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: rgba(255,255,255,0.3);" aria-labelledby="solution-heading">
+      <div class="container" style="max-width: 48rem;">
+        <p class="type-label">Response</p>
+        <h2 class="section-title" id="solution-heading">The solution</h2>
+        <div class="prose">
+          <p>TaskTracker strips the experience down to essentials — a clean list, clear completion states, and persistent storage in the browser. The Saline-inspired design system brings generous whitespace, editorial typography, and subtle motion so the app feels intentional and easy to use.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="features-heading">
+      <div class="container">
+        <p class="type-label">Highlights</p>
+        <h2 class="section-title" id="features-heading">Key features</h2>
+        <ul class="feature-list" role="list">
+          <li class="feature-list__item">Quick-add task input</li>
+          <li class="feature-list__item">Mark complete within the main view</li>
+          <li class="feature-list__item">Track tasks progress throughout the week</li>
+          <li class="feature-list__item">Reference a count of tasks completed a day and over a week</li>
+          <li class="feature-list__item">Calm, distraction-free layout with clear visual hierarchy</li>
+          <li class="feature-list__item">Responsive design that works on desktop and mobile</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="video-heading">
+      <div class="container">
+        <p class="type-label">Walkthrough</p>
+        <h2 class="section-title" id="video-heading">Demo</h2>
+        <div class="project-video">
+          <video controls muted playsinline preload="metadata" aria-label="Task Tracker demo video">
+            <source src="assets/TT_Video.mov" type="video/quicktime">
+            Your browser does not support embedded video.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: rgba(255,255,255,0.3);" aria-labelledby="outcomes-heading">
+      <div class="container about-grid">
+        <div>
+          <p class="type-label">Results</p>
+          <h2 class="type-h3" id="outcomes-heading">Outcomes</h2>
+          <div class="prose">
+            <p>The result is a working task manager that feels polished despite a simple feature set. Building Task Tracker reinforced how much design systems accelerate vibe coding — once tokens and components were set, UI decisions became faster and more consistent.</p>
+          </div>
+        </div>
+        <div>
+          <p class="type-label">Looking ahead</p>
+          <h2 class="type-h3" id="reflection-heading">Reflection</h2>
+          <div class="prose">
+            <p>Next I'd explore account and a mobile app version. Account creation as key for storing and referencing data in multiple settings. While, a mobile app is essential for viewing tasks on the go.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <a href="../index.html#projects" class="btn-link">← Back to projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <p class="site-footer__cta">
+          Have a project in mind?<br>
+          <a href="../contact/index.html" class="site-footer__cta-link overflow-btn">
+            <span class="overflow-btn__stack"><span>Let's talk</span><span>Let's talk</span></span>
+          </a>
+        </p>
+        <div class="site-footer__columns">
+          <div>
+            <p class="site-footer__heading">Website map</p>
+            <ul class="site-footer__links">
+              <li><a href="../index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>Home</span><span>Home</span></span></a></li>
+              <li><a href="../about/index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>About</span><span>About</span></span></a></li>
+              <li><a href="../contact/index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>Contact</span><span>Contact</span></span></a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="site-footer__heading">Projects</p>
+            <ul class="site-footer__links">
+              <li><a href="index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>Task Tracker</span><span>Task Tracker</span></span></a></li>
+              <li><a href="../RaceFinder/index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>Race Finder</span><span>Race Finder</span></span></a></li>
+              <li><a href="../BuzzTracker/assets/index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>Buzz Tracker</span><span>Buzz Tracker</span></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>&copy; 2026 McKenzie Schneider</span>
+        <span>Vibe coding portfolio</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open);
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+    }
+  </script>
+</body>
+</html>
