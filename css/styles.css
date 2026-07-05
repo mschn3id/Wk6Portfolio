@@ -383,6 +383,23 @@ img { display: block; max-width: 100%; height: auto; }
   margin-bottom: 1.5rem;
 }
 
+.section--hero.section--contact {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+
+.section--contact .type-display {
+  margin-bottom: 1rem;
+}
+
+.section--contact .type-body {
+  margin-bottom: 1.5rem;
+}
+
+.section--contact .contact-info__list {
+  margin-top: 0;
+}
+
 /* Project cards — 2 column list */
 .project-grid {
   display: grid;

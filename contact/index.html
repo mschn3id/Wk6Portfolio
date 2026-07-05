@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Get in touch with McKenzie Schneider — collaborations, feedback, and project inquiries.">
+  <meta name="description" content="Contact McKenzie Schneider — email, GitHub, and location for collaborations and project inquiries.">
   <title>Contact — McKenzie Schneider</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,69 +47,26 @@
   </header>
 
   <main id="main">
-    <section class="section section--hero">
+    <section class="section section--hero section--contact">
       <div class="container page-header">
         <p class="type-label">Get in touch</p>
         <h1 class="type-display">Say<br>Hello</h1>
-        <p class="type-body">Have feedback on a project, a collaboration idea, or just want to connect? Send a message — I read every one.</p>
-      </div>
-    </section>
+        <p class="type-body">Have feedback on a project, a collaboration idea, or just want to connect? Reach out by email or GitHub — I'd love to hear from you.</p>
 
-    <section class="section" aria-labelledby="contact-form-heading">
-      <div class="container contact-grid">
-        <form id="contact-form" novalidate>
-          <h2 class="type-h3" id="contact-form-heading">Send a message</h2>
-
-          <div class="form-group">
-            <label class="form-label" for="name">Your name</label>
-            <input class="input" type="text" id="name" name="name" placeholder="Jane Doe" autocomplete="name" required>
-            <p class="form-error" id="name-error" role="alert">Please enter your name.</p>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="email">Email address</label>
-            <input class="input" type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
-            <p class="form-error" id="email-error" role="alert">Please enter a valid email address.</p>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="subject">Subject</label>
-            <input class="input" type="text" id="subject" name="subject" placeholder="Project inquiry" required>
-            <p class="form-error" id="subject-error" role="alert">Please enter a subject.</p>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="message">Message</label>
-            <textarea class="textarea" id="message" name="message" placeholder="Tell me about your idea..." required></textarea>
-            <p class="form-error" id="message-error" role="alert">Please enter a message.</p>
-          </div>
-
-          <button type="submit" class="btn-primary">Send message</button>
-        </form>
-
-        <div class="contact-info">
-          <h2 class="type-h3">Other ways to reach me</h2>
-          <p class="prose">Prefer email or social? Here are direct links. I typically respond within a few days.</p>
-
-          <ul class="contact-info__list">
-            <li class="contact-info__item">
-              <span class="contact-info__label">Email</span>
-              <a class="contact-info__value" href="mailto:hello@mckenzieschneider.com">hello@mckenzieschneider.com</a>
-            </li>
-            <li class="contact-info__item">
-              <span class="contact-info__label">GitHub</span>
-              <a class="contact-info__value" href="https://github.com/mckenzieschneider" target="_blank" rel="noopener noreferrer">@mckenzieschneider</a>
-            </li>
-            <li class="contact-info__item">
-              <span class="contact-info__label">Location</span>
-              <span class="contact-info__value">Iowa City, IA</span>
-            </li>
-            <li class="contact-info__item">
-              <span class="contact-info__label">Availability</span>
-              <span class="contact-info__value">Open to collaborations</span>
-            </li>
-          </ul>
-        </div>
+        <ul class="contact-info__list">
+          <li class="contact-info__item">
+            <span class="contact-info__label">Email</span>
+            <a class="contact-info__value" href="mailto:mschn3id@iastate.edu">mschn3id@iastate.edu</a>
+          </li>
+          <li class="contact-info__item">
+            <span class="contact-info__label">GitHub</span>
+            <a class="contact-info__value" href="https://github.com/mschn3id" target="_blank" rel="noopener noreferrer">@mschn3id</a>
+          </li>
+          <li class="contact-info__item">
+            <span class="contact-info__label">Location</span>
+            <span class="contact-info__value">Seattle, WA</span>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
@@ -159,36 +116,6 @@
         const open = nav.classList.toggle('is-open');
         toggle.setAttribute('aria-expanded', open);
         toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      });
-    }
-
-    const form = document.getElementById('contact-form');
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        let valid = true;
-
-        const fields = [
-          { id: 'name', test: (v) => v.trim().length > 0 },
-          { id: 'email', test: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) },
-          { id: 'subject', test: (v) => v.trim().length > 0 },
-          { id: 'message', test: (v) => v.trim().length > 0 },
-        ];
-
-        fields.forEach(({ id, test }) => {
-          const input = document.getElementById(id);
-          const error = document.getElementById(id + '-error');
-          const ok = test(input.value);
-          error.classList.toggle('is-visible', !ok);
-          if (!ok) valid = false;
-        });
-
-        if (valid) {
-          const btn = form.querySelector('.btn-primary');
-          btn.textContent = 'Message sent!';
-          btn.disabled = true;
-          form.reset();
-        }
       });
     }
   </script>
