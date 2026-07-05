@@ -1,12 +1,12 @@
 ---
 title: Buzz Tracker
-overline: Caffeine data analysis
+overline: Addiction support
 description: A simple, fun, and easy to use caffeine tracker to track your regular intake.
 role: Product designer
 timeline: 2026, 2 weeks
 tools: HTML, CSS, JavaScript
 team: Solo product designer
-cover: assets/BT_Cover.png
+cover: assets/BT_Mockup_desktop-mobile.png
 published app: https://buzztrackerfortheaddicted.netlify.app/ 
 ---
 

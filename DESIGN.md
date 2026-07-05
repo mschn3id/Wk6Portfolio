@@ -58,7 +58,7 @@ Confidence tags: **Observed** = visible in reference | **Likely** = strongly imp
 | `--color-text-subtle` | `rgba(61, 61, 61, 0.25)` | Overhead labels, inactive meta | Observed |
 | `--color-text-inverse` | `#ffffff` | Text on accent/dark surfaces | Observed |
 | `--color-accent-primary` | `#07b98a` | Primary CTA, links, scrollbar | Observed |
-| `--color-accent-primary-hover` | `#06a67c` | CTA hover (darkened ~8%) | Inferred |
+| `--color-accent-primary-hover` | `#058f6e` | CTA hover (darkened for contrast) | Implemented |
 | `--color-border-default` | `rgba(61, 61, 61, 0.2)` | Header rule, dividers | Observed |
 | `--color-border-light` | `rgba(0, 0, 0, 0.1)` | Product separators | Observed |
 | `--color-overlay-modal` | `rgba(35, 35, 35, 0.9)` | Modal backdrop | Observed |
@@ -87,8 +87,8 @@ Confidence tags: **Observed** = visible in reference | **Likely** = strongly imp
 | `--font-size-lg` | `1.22rem` (~22px) | Observed (body/p) |
 | `--font-size-xl` | `1.44rem` (~26px) | Observed (h4) |
 | `--font-size-2xl` | `1.77rem` (~32px) | Observed (h3) |
-| `--font-size-3xl` | `4rem` (~72px) | Observed (h2) |
-| `--font-size-4xl` | `5.5rem` (~99px) | Observed (h1) |
+| `--font-size-3xl` | `clamp(2.5rem, 5vw, 4rem)` | Section titles (fluid) | Implemented |
+| `--font-size-4xl` | `clamp(3rem, 8vw, 5.5rem)` | Hero display (fluid) | Implemented |
 | `--font-size-rank` | `4.88rem` (~88px) | Observed (product numbers) |
 | `--font-weight-light` | `300` | Observed (body) |
 | `--font-weight-regular` | `400` | Observed |
@@ -498,6 +498,119 @@ See Accessibility Guidelines. All scroll-jacking and ambient loops must have sta
 7. **Product hover** — CSS-only fallback: swap image opacity or `transform: scale(1.05)`. Displacement shaders are optional enhancement.
 
 8. **Preview** — Open `preview.html` in a browser to validate tokens and components against this spec.
+
+---
+
+## Portfolio Site Application
+
+This section documents how Saline is **implemented** in the McKenzie Schneider vibe-coding portfolio (`index.html`, case study pages, `about/`, `contact/`). Use it alongside `css/styles.css` and the `portfolio-project-page` skill when adding or updating project pages.
+
+### Site structure
+
+| Path | Purpose |
+|------|---------|
+| `index.html` | Home — hero + featured project grid |
+| `{ProjectName}/index.html` | Case study (default layout) |
+| `{ProjectName}/assets/index.html` | Case study when page lives in `assets/` (BuzzTracker pattern) |
+| `{ProjectName}/content.md` | Source content for case study generation |
+| `about/index.html`, `contact/index.html` | Supporting pages |
+| `css/styles.css` | Single shared stylesheet — all tokens and components |
+| `preview.html` | Design system reference (not linked in nav) |
+
+### Home page
+
+**Hero** (`section--hero`):
+
+- Text-only — no `hero__visual` column
+- Single-line display title with spaces (e.g. `Build With Intent`); `text-transform: uppercase` handles casing
+- `h1.type-display` uses `letter-spacing: normal` to override inherited body tracking
+- CTA: `btn-primary` linking to `#projects`
+
+**Featured projects** (`#projects`):
+
+- Overline: `type-label` → title: `section-title` → description: `section-desc`
+- `project-grid`: 2-column bordered grid; cards are full `<a class="project-card">` blocks
+- Card image: `{XX}_Mockup_desktop-mobile.png` at 16:10 (`width="280" height="175"`, `object-fit: cover`)
+- Card structure: overline → title → description → image → “View project” link with Lucide arrow
+
+### Case study pages
+
+**Section order** (always use full-width `.container` — never `max-width: 48rem` on prose sections):
+
+1. Hero — two-column `container hero` with copy + wide mockup visual
+2. At a glance — `project-meta` grid
+3. Overview
+4. Challenge — alternate background `rgba(255,255,255,0.3)`
+5. Process — `process-grid` with numbered captions
+6. Solution — alternate background
+7. Key features — `feature-list` two-column grid
+8. Demo video (optional) — `section-heading-row` with live-app `btn-link` when `published app` is set
+9. Outcomes + Reflection — `about-grid` two columns, alternate background
+10. Back to projects — `btn-link` to `{ROOT}index.html#projects`
+
+**Hero visual**:
+
+- Use `{XX}_Mockup_desktop-mobile.png` (same asset as home page card)
+- Classes: `hero__image hero__image--wide`
+- Dimensions: `width="600" height="400"` (3:2 aspect ratio, `object-fit: contain`)
+- Omit `hero__visual` entirely only when no mockup or cover asset exists
+
+**Alternating sections**:
+
+Apply `style="background: rgba(255,255,255,0.3);"` on Challenge, Solution, and Outcomes blocks for visual rhythm.
+
+**Typography on case studies**:
+
+- Hero `<h1>`: split title on spaces with `<br>` (e.g. `Task<br>Tracker`)
+- Section headings: `section-title` (uppercase display)
+- Outcomes/Reflection subheads: `type-h3` (mixed case, smaller than section titles)
+- Body copy: `prose` wrapper with `type-label` overlines
+
+### Navigation and shell
+
+Every page includes:
+
+- Skip link, `page-bg` blobs, grain overlay
+- Header: logo `MS` → Projects (links to `#projects`) → About → Say hello
+- Footer: CTA, website map, project links, copyright
+- `lucide.createIcons()` + mobile nav toggle script
+- Favicon: `favicon.svg` (adjust relative path by depth)
+
+Match the header/footer markup in `TaskTracker/index.html` — not the legacy Home/About/Contact list from early templates.
+
+### Asset conventions
+
+| File | Use |
+|------|-----|
+| `{XX}_Mockup_desktop-mobile.png` | Home card + case study hero (primary cover) |
+| `{XX}_Cover.png` | Flat UI screenshot (source for mockup generation) |
+| `{XX}_Mobile.png` | Mobile UI screenshot (source for mockup generation) |
+| `{XX}_Hero.png` | Legacy hero fallback only |
+| `{XX}_Process_1.png` … `N` | Process gallery steps |
+| `{XX}_Video.mp4` / `.mov` | Demo walkthrough |
+
+Asset prefix: `TaskTracker` → `TT`, `RaceFinder` → `RF`, `BuzzTracker` → `BT`.
+
+Generate desktop+mobile mockups with the `device-mockup` skill when `{XX}_Mockup_desktop-mobile.png` is missing. Set `cover: assets/{XX}_Mockup_desktop-mobile.png` in `content.md`.
+
+**Process screenshots**: Use clean, opaque PNGs without macOS window rounded-corner artifacts. `.process-item__img` has `background: var(--color-surface-base)` to blend edges.
+
+### Responsive behavior
+
+- `@media (max-width: 1024px)`: hero stacks to single column; `project-meta` → 2 columns
+- `@media (max-width: 768px)`: `project-grid` and `feature-list` → single column; project card right border removed
+
+### Portfolio-specific CSS classes
+
+| Class | Role |
+|-------|------|
+| `hero__image--wide` | 3:2 mockup hero (`object-fit: contain`, full column width) |
+| `project-card` | Home page featured project link card |
+| `project-meta` | Role / timeline / tools / team grid |
+| `feature-list` | Key features with accent left border |
+| `process-grid` | Stacked process figures with rank numerals |
+| `section-heading-row` | Demo heading + inline CTA row |
+| `about-grid` | Two-column outcomes + reflection layout |
 
 ---
 

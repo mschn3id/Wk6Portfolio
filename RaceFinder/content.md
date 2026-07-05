@@ -1,12 +1,12 @@
 ---
 title: Race Finder
-overline: Race data search and tracking 
+overline: Health and fitness aid
 description: Race Finder is an app users can use to find, save, and track their races using the RunSignup API. 
 role: Product designer
 timeline: 2026, 2 weeks 
 tools: HTML, CSS, JavaScript, API
 team: Solo product designer
-cover: assets/RF_Cover.png
+cover: assets/RF_Mockup_desktop-mobile.png
 published app: https://yournextracefinder.netlify.app/ 
 ---
 

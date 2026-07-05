@@ -1,12 +1,12 @@
 ---
 title: Task Tracker
-overline: Productivity
+overline: Productivity tool
 description: A focused task management app for capturing, organizing, and completing daily work with a calm, distraction-free interface.
 role: Product designer
 timeline: 2026, 2 weeks
 tools: HTML, CSS, JavaScript, Local Storage
 team: Solo product designer
-cover: assets/TT_Cover.png
+cover: assets/TT_Mockup_desktop-mobile.png
 published app: https://trackerzapp.netlify.app/
 
 ---
