@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Recipe Finder is a web app for discovering recipes, filtering by difficulty and prep time, and saving favorites to a personal collection.">
+  <title>Recipe Finder — McKenzie Schneider</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Work+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="page-bg" aria-hidden="true">
+    <div class="blob blob--mint"></div>
+    <div class="blob blob--blue"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../index.html" class="site-logo">MS</a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <div class="site-nav__list">
+          <a href="../index.html#projects" class="site-nav__link overflow-btn site-nav__link--projects">
+            <span class="overflow-btn__stack"><span>Projects</span><span>Projects</span></span>
+          </a>
+          <div class="site-nav__actions">
+            <a href="../about/index.html" class="site-nav__link overflow-btn site-nav__link--about">
+              <span class="overflow-btn__stack"><span>About</span><span>About</span></span>
+            </a>
+            <a href="../contact/index.html" class="site-nav__link overflow-btn site-nav__link--contact">
+              <span class="overflow-btn__stack"><span>Say hello</span><span>Say hello</span></span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section section--hero">
+      <div class="container hero">
+        <div class="hero__content">
+          <p class="type-label">Meal prep aid</p>
+          <h1 class="type-display">Recipe<br>Finder</h1>
+          <p class="type-body">Recipe Finder is a web app for discovering recipes, filtering by difficulty and prep time, and saving favorites to a personal collection.</p>
+          <div class="hero__actions">
+            <a href="https://delightful-dieffenbachia-7d40f2.netlify.app/" class="btn-primary" target="_blank" rel="noopener noreferrer">View live app</a>
+            <a href="https://symphonious-pudding-de5336.netlify.app/" class="btn-link" target="_blank" rel="noopener noreferrer">View design library →</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <img
+            class="hero__image hero__image--wide"
+            src="assets/CF_Mockup_desktop-mobile.png"
+            alt="Recipe Finder project preview"
+            width="600"
+            height="400"
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="meta-heading">
+      <div class="container">
+        <p class="type-label">Project details</p>
+        <h2 class="section-title" id="meta-heading">At a glance</h2>
+        <ul class="project-meta" role="list">
+          <li class="project-meta__item">
+            <span class="project-meta__label">Role</span>
+            <span class="project-meta__value">Product designer</span>
+          </li>
+          <li class="project-meta__item">
+            <span class="project-meta__label">Timeline</span>
+            <span class="project-meta__value">2026, 2 weeks</span>
+          </li>
+          <li class="project-meta__item">
+            <span class="project-meta__label">Tools</span>
+            <span class="project-meta__value">HTML, CSS, JavaScript, Local Storage</span>
+          </li>
+          <li class="project-meta__item">
+            <span class="project-meta__label">Team</span>
+            <span class="project-meta__value">Solo product designer</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="overview-heading">
+      <div class="container">
+        <p class="type-label">Context</p>
+        <h2 class="section-title" id="overview-heading">Overview</h2>
+        <div class="prose">
+          <p>Recipe Finder helps home cooks browse a curated recipe library, narrow results with search and filters, and save dishes they want to make again. The interface supports both grid and list layouts so users can scan visually or compare recipes by time and ingredient count at a glance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: rgba(255,255,255,0.3);" aria-labelledby="challenge-heading">
+      <div class="container">
+        <p class="type-label">Challenge</p>
+        <h2 class="section-title" id="challenge-heading">The challenge</h2>
+        <div class="prose">
+          <p>Recipe sites often bury useful details behind ad cluttered pages or force users to bounce between tabs, bookmarks, and notes. I needed a single place to discover recipes, filter by practical constraints like difficulty and total time, and return to saved favorites without losing context.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: rgba(255,255,255,0.3);" aria-labelledby="process-heading">
+      <div class="container">
+        <p class="type-label">How it was built</p>
+        <h2 class="section-title" id="process-heading">Process</h2>
+        <ul class="process-steps" role="list">
+          <li class="process-steps__item">
+            <span class="process-steps__icon" aria-hidden="true"><i data-lucide="map"></i></span>
+            <span class="process-steps__text">Mapped out key user flows for search, filter, save, and detail views</span>
+          </li>
+          <li class="process-steps__item">
+            <span class="process-steps__icon" aria-hidden="true"><i data-lucide="compass"></i></span>
+            <span class="process-steps__text">Gathered inspiration from the classic Craigslist and CSS animation sites to inform the design library</span>
+          </li>
+          <li class="process-steps__item">
+            <span class="process-steps__icon" aria-hidden="true"><i data-lucide="sparkles"></i></span>
+            <span class="process-steps__text">Prompted site structure and DESIGN.md using Cursor</span>
+          </li>
+          <li class="process-steps__item">
+            <span class="process-steps__icon" aria-hidden="true"><i data-lucide="rocket"></i></span>
+            <span class="process-steps__text">Iterated appropriately, published, and hosted on Netlify</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" style="background: rgba(255,255,255,0.3);" aria-labelledby="solution-heading">
+      <div class="container">
+        <p class="type-label">Response</p>
+        <h2 class="section-title" id="solution-heading">The solution</h2>
+        <div class="prose">
+          <p>Recipe Finder brings discovery, filtering, and saving into one calm interface. Users can search or filter recipes, switch between grid and list views, and open saved dishes in a focused detail modal with ingredients, instructions, and categories.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="journey-heading">
+      <div class="container">
+        <p class="type-label">Main screens</p>
+        <h2 class="section-title" id="journey-heading">User journey</h2>
+        <div class="process-grid">
+          <figure class="process-item">
+            <img
+              class="process-item__img"
+              src="assets/CF_Process_1.png"
+              alt="Recipe Finder — discover recipes list"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <figcaption class="process-item__caption">
+              <span class="process-item__step" aria-hidden="true">01</span>
+              User lands on the Discover Recipes home page with search and a recipe list
+            </figcaption>
+          </figure>
+          <figure class="process-item">
+            <img
+              class="process-item__img"
+              src="assets/CF_Process_2.png"
+              alt="Recipe Finder — filtered recipe list"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <figcaption class="process-item__caption">
+              <span class="process-item__step" aria-hidden="true">02</span>
+              User can filter by difficulty, total time, and ingredient count
+            </figcaption>
+          </figure>
+          <figure class="process-item">
+            <img
+              class="process-item__img"
+              src="assets/CF_Process_3.png"
+              alt="Recipe Finder — saved recipes collection"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <figcaption class="process-item__caption">
+              <span class="process-item__step" aria-hidden="true">03</span>
+              User can save the recipes that they like and it get's added to "Saved Recipes"
+            </figcaption>
+          </figure>
+          <figure class="process-item">
+            <img
+              class="process-item__img"
+              src="assets/CF_Process_4.png"
+              alt="Recipe Finder — recipe detail modal"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <figcaption class="process-item__caption">
+              <span class="process-item__step" aria-hidden="true">04</span>
+              User can view recipes in full detail in a modal view and review them after completion
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="features-heading">
+      <div class="container">
+        <p class="type-label">Highlights</p>
+        <h2 class="section-title" id="features-heading">Key features</h2>
+        <ul class="feature-list" role="list">
+          <li class="feature-list__item">Search recipes by name or keyword</li>
+          <li class="feature-list__item">Filter by difficulty, max total time, and max ingredients</li>
+          <li class="feature-list__item">Grid and list browsing layouts</li>
+          <li class="feature-list__item">Save recipes to a favorites collection</li>
+          <li class="feature-list__item">Recipe detail modal with ingredients, instructions, and categories</li>
+          <li class="feature-list__item">User can leave reviews after completing a recipe</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="video-heading">
+      <div class="container">
+        <p class="type-label">Walkthrough</p>
+        <div class="section-heading-row">
+          <h2 class="section-title" id="video-heading">Demo</h2>
+          <a href="https://delightful-dieffenbachia-7d40f2.netlify.app/" class="btn-link" target="_blank" rel="noopener noreferrer">View live app →</a>
+        </div>
+        <div class="project-video">
+          <video controls muted playsinline preload="metadata" aria-label="Recipe Finder demo video">
+            <source src="assets/CF_Video.mp4" type="video/mp4">
+            <source src="assets/CF_Video.mov" type="video/quicktime">
+            Your browser does not support embedded video.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: rgba(255,255,255,0.3);" aria-labelledby="outcomes-heading">
+      <div class="container about-grid">
+        <div>
+          <p class="type-label">Results</p>
+          <h2 class="type-h3" id="outcomes-heading">Outcomes</h2>
+          <div class="prose">
+            <p>The result is a polished recipe browser that makes everyday meal planning feel straightforward — find, filter, save, and cook without leaving the app.</p>
+          </div>
+        </div>
+        <div>
+          <p class="type-label">Looking ahead</p>
+          <h2 class="type-h3" id="reflection-heading">Reflection</h2>
+          <div class="prose">
+            <p>Next I'd connect a live recipe API for dynamic search, add the ability to add recipes from other collections (i.e. recipe books, friends, etc.) and add user accounts for cross-device sync.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <a href="../index.html#projects" class="btn-link">← Back to projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <p class="site-footer__cta">
+          Have a project in mind?<br>
+          <a href="../contact/index.html" class="site-footer__cta-link overflow-btn">
+            <span class="overflow-btn__stack"><span>Let's talk</span><span>Let's talk</span></span>
+          </a>
+        </p>
+        <div class="site-footer__columns">
+          <div>
+            <p class="site-footer__heading">Website map</p>
+            <ul class="site-footer__links">
+              <li><a href="../index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>Home</span><span>Home</span></span></a></li>
+              <li><a href="../about/index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>About</span><span>About</span></span></a></li>
+              <li><a href="../contact/index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>Contact</span><span>Contact</span></span></a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="site-footer__heading">Projects</p>
+            <ul class="site-footer__links">
+              <li><a href="../TaskTracker/index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>Task Tracker</span><span>Task Tracker</span></span></a></li>
+              <li><a href="../RaceFinder/index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>Race Finder</span><span>Race Finder</span></span></a></li>
+              <li><a href="../BuzzTracker/assets/index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>Buzz Tracker</span><span>Buzz Tracker</span></span></a></li>
+              <li><a href="index.html" class="overflow-btn"><span class="overflow-btn__stack"><span>Recipe Finder</span><span>Recipe Finder</span></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>&copy; 2026 McKenzie Schneider</span>
+        <span>Vibe coding portfolio</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open);
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+    }
+  </script>
+</body>
+</html>

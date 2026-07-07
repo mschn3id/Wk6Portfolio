@@ -381,6 +381,13 @@ h1.type-display {
   object-fit: contain;
 }
 
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .hero__rank {
   position: absolute;
   bottom: -1rem;
