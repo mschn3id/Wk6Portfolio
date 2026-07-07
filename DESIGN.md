@@ -593,7 +593,9 @@ Asset prefix: `TaskTracker` → `TT`, `RaceFinder` → `RF`, `BuzzTracker` → `
 
 Generate desktop+mobile mockups with the `device-mockup` skill when `{XX}_Mockup_desktop-mobile.png` is missing. Set `cover: assets/{XX}_Mockup_desktop-mobile.png` in `content.md`.
 
-**Process screenshots**: Use clean, opaque PNGs without macOS window rounded-corner artifacts. `.process-item__img` has `background: var(--color-surface-base)` to blend edges.
+**Process gallery images**: Wrap flat UI screenshots in a **flat Safari browser frame** (front-facing, no angle, no drop shadow). Output at **1536×1024**, flatten onto `#f4f4f4` (`--color-surface-base`), and bake in **16px rounded corners** so edges blend with the page. Set the address bar URL to match the screen shown (e.g. `racefinder.app/search`, `buzztracker.app/week`, `tasktracker.app/schedule`). Generate from the flat screenshot using the `device-mockup` skill / `GenerateImage` with `reference_image_paths`, then post-process with rounded-corner masking. Never use raw macOS window screenshots — they produce dark rounded-corner artifacts.
+
+`.process-item__img` uses `background: var(--color-surface-base)` as a fallback blend for any edge pixels.
 
 ### Responsive behavior
 
@@ -609,6 +611,7 @@ Generate desktop+mobile mockups with the `device-mockup` skill when `{XX}_Mockup
 | `project-meta` | Role / timeline / tools / team grid |
 | `feature-list` | Key features with accent left border |
 | `process-grid` | Stacked process figures with rank numerals |
+| `process-item__img` | Full-width browser-frame process screenshots (16px radius, surface-base background) |
 | `section-heading-row` | Demo heading + inline CTA row |
 | `about-grid` | Two-column outcomes + reflection layout |
 

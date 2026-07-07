@@ -908,6 +908,9 @@ h1.type-display {
   display: block;
   margin-bottom: 1rem;
   background: var(--color-surface-base);
+  border-radius: 16px;
+  border: none;
+  overflow: hidden;
 }
 .process-item__caption {
   display: flex;
