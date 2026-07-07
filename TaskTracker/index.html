@@ -98,7 +98,7 @@
         <p class="type-label">Context</p>
         <h2 class="section-title" id="overview-heading">Overview</h2>
         <div class="prose">
-          <p>TaskTracker is a lightweight productivity app built for people who want to stay on top of daily work without the noise of heavyweight project tools. The interface prioritizes clarity — tasks are easy to add, sort, and complete so attention stays on what matters.</p>
+          <p>TaskTracker is a lightweight productivity app built for people who want to stay on top of daily work without the noise of heavyweight project tools. The interface prioritizes clarity, tasks are easy to add, sort, and complete so attention stays on what matters.</p>
         </div>
       </div>
     </section>
@@ -113,68 +113,24 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="process-heading">
+    <section class="section" style="background: rgba(255,255,255,0.3);" aria-labelledby="process-heading">
       <div class="container">
         <p class="type-label">How it was built</p>
         <h2 class="section-title" id="process-heading">Process</h2>
-        <div class="process-grid">
-          <figure class="process-item">
-            <img
-              class="process-item__img"
-              src="assets/TT_Process_1.png"
-              alt="Task Tracker process step 1 — defining the core user flow"
-              width="640"
-              height="400"
-              loading="lazy"
-            >
-            <figcaption class="process-item__caption">
-              <span class="process-item__step" aria-hidden="true">01</span>
-              Defined the core user flow — capture, organize, complete — before writing any code
-            </figcaption>
-          </figure>
-          <figure class="process-item">
-            <img
-              class="process-item__img"
-              src="assets/TT_Process_2.png"
-              alt="Task Tracker process step 2 — wireframes and design tokens"
-              width="640"
-              height="400"
-              loading="lazy"
-            >
-            <figcaption class="process-item__caption">
-              <span class="process-item__step" aria-hidden="true">02</span>
-              Sketched wireframes and applied the Saline design tokens for typography and color
-            </figcaption>
-          </figure>
-          <figure class="process-item">
-            <img
-              class="process-item__img"
-              src="assets/TT_Process_3.png"
-              alt="Task Tracker process step 3 — interactive prototype"
-              width="640"
-              height="400"
-              loading="lazy"
-            >
-            <figcaption class="process-item__caption">
-              <span class="process-item__step" aria-hidden="true">03</span>
-              Built the interactive prototype with vanilla JavaScript and local storage
-            </figcaption>
-          </figure>
-          <figure class="process-item">
-            <img
-              class="process-item__img"
-              src="assets/TT_Process_4.png"
-              alt="Task Tracker process step 4 — spacing and interaction refinement"
-              width="640"
-              height="400"
-              loading="lazy"
-            >
-            <figcaption class="process-item__caption">
-              <span class="process-item__step" aria-hidden="true">04</span>
-              Refined spacing, hover states, and empty-state messaging through iteration
-            </figcaption>
-          </figure>
-        </div>
+        <ul class="process-steps" role="list">
+          <li class="process-steps__item">
+            <span class="process-steps__icon" aria-hidden="true"><i data-lucide="map"></i></span>
+            <span class="process-steps__text">Mapped out key user flows</span>
+          </li>
+          <li class="process-steps__item">
+            <span class="process-steps__icon" aria-hidden="true"><i data-lucide="sparkles"></i></span>
+            <span class="process-steps__text">Prompted related user flows and site structure using Cursor</span>
+          </li>
+          <li class="process-steps__item">
+            <span class="process-steps__icon" aria-hidden="true"><i data-lucide="rocket"></i></span>
+            <span class="process-steps__text">Iterated appropriately, published, and hosted on Netlify</span>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -183,7 +139,72 @@
         <p class="type-label">Response</p>
         <h2 class="section-title" id="solution-heading">The solution</h2>
         <div class="prose">
-          <p>TaskTracker strips the experience down to essentials — a clean list, clear completion states, and persistent storage in the browser. The Saline-inspired design system brings generous whitespace, editorial typography, and subtle motion so the app feels intentional and easy to use.</p>
+          <p>TaskTracker strips the experience down to essentials — a clean list, clear completion states, and persistent storage in the browser. The design system brings generous whitespace, editorial typography, and subtle motion so the app feels intentional and easy to use.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="journey-heading">
+      <div class="container">
+        <p class="type-label">Main screens</p>
+        <h2 class="section-title" id="journey-heading">User journey</h2>
+        <div class="process-grid">
+          <figure class="process-item">
+            <img
+              class="process-item__img"
+              src="assets/TT_Process_1.png"
+              alt="Task Tracker — weekly schedule setup"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <figcaption class="process-item__caption">
+              <span class="process-item__step" aria-hidden="true">01</span>
+              User can set the reoccuring tasks and blockers on their weekly schedule
+            </figcaption>
+          </figure>
+          <figure class="process-item">
+            <img
+              class="process-item__img"
+              src="assets/TT_Process_2.png"
+              alt="Task Tracker — schedule preview on save"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <figcaption class="process-item__caption">
+              <span class="process-item__step" aria-hidden="true">02</span>
+              On save, user can see a preview of selections and relationship to weekly plan
+            </figcaption>
+          </figure>
+          <figure class="process-item">
+            <img
+              class="process-item__img"
+              src="assets/TT_Process_3.png"
+              alt="Task Tracker — weekly task progress"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <figcaption class="process-item__caption">
+              <span class="process-item__step" aria-hidden="true">03</span>
+              Once set, user can see task progress across the span of their current week
+            </figcaption>
+          </figure>
+          <figure class="process-item">
+            <img
+              class="process-item__img"
+              src="assets/TT_Process_4.png"
+              alt="Task Tracker — daily task completion"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <figcaption class="process-item__caption">
+              <span class="process-item__step" aria-hidden="true">04</span>
+              Users can set which tasks are complete for that day
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -226,14 +247,14 @@
           <p class="type-label">Results</p>
           <h2 class="type-h3" id="outcomes-heading">Outcomes</h2>
           <div class="prose">
-            <p>The result is a working task manager that feels polished despite a simple feature set. Building Task Tracker reinforced how much design systems accelerate vibe coding — once tokens and components were set, UI decisions became faster and more consistent.</p>
+            <p>The result is a working task manager that feels polished despite a simple feature set.</p>
           </div>
         </div>
         <div>
           <p class="type-label">Looking ahead</p>
           <h2 class="type-h3" id="reflection-heading">Reflection</h2>
           <div class="prose">
-            <p>Next I'd explore account and a mobile app version. Account creation as key for storing and referencing data in multiple settings. While, a mobile app is essential for viewing tasks on the go.</p>
+            <p>Next I'd explore account and a mobile app version. Account creation is key for storing and referencing data in multiple settings. While, a mobile app is essential for viewing tasks on the go.</p>
           </div>
         </div>
       </div>

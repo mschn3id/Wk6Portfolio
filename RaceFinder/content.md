@@ -17,11 +17,20 @@ This web app is for users that need help finding races based on their particular
 ## Challenge
 
 Today, users have to do multiple internet searches in order to find a race that meets their needs. From there they have to save it to a spreadsheet and keep track of enrollment dates, costs, and timeline. Users need one place they can go to, to find, save, and track races according to their needs. 
-## Process
+
+## User journey
 
 - User lands on Race Finder home page where they can quickly and easily start a search
 - Upon search, users have the option to filter race results to further meet their needs
 - Upon save, the race is stored in the "My races" page for future reference and tracking 
+
+## Process
+
+- Mapped out key user flows
+- Incorporated key user flows, site structure, and DESIGN.MD file 
+- Connected site to RunSignup API
+- Accounted for success, error, and loading states
+- Iterated appropriately, published, and hosted on Netlify
 
 ## Solution
 

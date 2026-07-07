@@ -541,12 +541,14 @@ This section documents how Saline is **implemented** in the McKenzie Schneider v
 2. At a glance — `project-meta` grid
 3. Overview
 4. Challenge — alternate background `rgba(255,255,255,0.3)`
-5. Process — `process-grid` with numbered captions
-6. Solution — alternate background
-7. Key features — `feature-list` two-column grid
-8. Demo video (optional) — `section-heading-row` with live-app `btn-link` when `published app` is set
-9. Outcomes + Reflection — `about-grid` two columns, alternate background
-10. Back to projects — `btn-link` to `{ROOT}index.html#projects`
+5. User journey — `journey-list` numbered steps from `## User journey`
+6. Process — `process-steps` text list with Lucide icon per step from `## Process`
+7. Solution — alternate background
+8. Key features — `feature-list` two-column grid
+9. Gallery (optional) — `process-grid` browser-frame screenshots from `## Gallery`; captions match user journey steps
+10. Demo video (optional) — `section-heading-row` with live-app `btn-link` when `published app` is set
+11. Outcomes + Reflection — `about-grid` two columns, alternate background
+12. Back to projects — `btn-link` to `{ROOT}index.html#projects`
 
 **Hero visual**:
 
@@ -593,9 +595,7 @@ Asset prefix: `TaskTracker` → `TT`, `RaceFinder` → `RF`, `BuzzTracker` → `
 
 Generate desktop+mobile mockups with the `device-mockup` skill when `{XX}_Mockup_desktop-mobile.png` is missing. Set `cover: assets/{XX}_Mockup_desktop-mobile.png` in `content.md`.
 
-**Process gallery images**: Wrap flat UI screenshots in a **flat Safari browser frame** (front-facing, no angle, no drop shadow). Output at **1536×1024**, flatten onto `#f4f4f4` (`--color-surface-base`), and bake in **16px rounded corners** so edges blend with the page. Set the address bar URL to match the screen shown (e.g. `racefinder.app/search`, `buzztracker.app/week`, `tasktracker.app/schedule`). Generate from the flat screenshot using the `device-mockup` skill / `GenerateImage` with `reference_image_paths`, then post-process with rounded-corner masking. Never use raw macOS window screenshots — they produce dark rounded-corner artifacts.
-
-`.process-item__img` uses `background: var(--color-surface-base)` as a fallback blend for any edge pixels.
+**Process gallery images** (`{XX}_Process_N.png` in `## Gallery`): Flat Safari browser-frame mockups used in the **Gallery** section — not the text **Process** section. See process image generation below.
 
 ### Responsive behavior
 
@@ -610,8 +610,10 @@ Generate desktop+mobile mockups with the `device-mockup` skill when `{XX}_Mockup
 | `project-card` | Home page featured project link card |
 | `project-meta` | Role / timeline / tools / team grid |
 | `feature-list` | Key features with accent left border |
-| `process-grid` | Stacked process figures with rank numerals |
+| `process-grid` | Stacked screenshot figures with rank numerals (gallery) |
 | `process-item__img` | Full-width browser-frame process screenshots (16px radius, surface-base background) |
+| `journey-list` | Numbered user journey steps |
+| `process-steps` | Build-process steps with left-aligned Lucide icons |
 | `section-heading-row` | Demo heading + inline CTA row |
 | `about-grid` | Two-column outcomes + reflection layout |
 

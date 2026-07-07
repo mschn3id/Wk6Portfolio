@@ -113,54 +113,32 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="process-heading">
+    <section class="section" style="background: rgba(255,255,255,0.3);" aria-labelledby="process-heading">
       <div class="container">
         <p class="type-label">How it was built</p>
         <h2 class="section-title" id="process-heading">Process</h2>
-        <div class="process-grid">
-          <figure class="process-item">
-            <img
-              class="process-item__img"
-              src="assets/RF_Process_1.png"
-              alt="Race Finder process step 1 — home page search"
-              width="640"
-              height="400"
-              loading="lazy"
-            >
-            <figcaption class="process-item__caption">
-              <span class="process-item__step" aria-hidden="true">01</span>
-              User lands on Race Finder home page where they can quickly and easily start a search
-            </figcaption>
-          </figure>
-          <figure class="process-item">
-            <img
-              class="process-item__img"
-              src="assets/RF_Process_2.png"
-              alt="Race Finder process step 2 — filtering search results"
-              width="640"
-              height="400"
-              loading="lazy"
-            >
-            <figcaption class="process-item__caption">
-              <span class="process-item__step" aria-hidden="true">02</span>
-              Upon search, users have the option to filter race results to further meet their needs
-            </figcaption>
-          </figure>
-          <figure class="process-item">
-            <img
-              class="process-item__img"
-              src="assets/RF_Process_3.png"
-              alt="Race Finder process step 3 — saving races to My races"
-              width="640"
-              height="400"
-              loading="lazy"
-            >
-            <figcaption class="process-item__caption">
-              <span class="process-item__step" aria-hidden="true">03</span>
-              Upon save, the race is stored in the "My races" page for future reference and tracking
-            </figcaption>
-          </figure>
-        </div>
+        <ul class="process-steps" role="list">
+          <li class="process-steps__item">
+            <span class="process-steps__icon" aria-hidden="true"><i data-lucide="map"></i></span>
+            <span class="process-steps__text">Mapped out key user flows</span>
+          </li>
+          <li class="process-steps__item">
+            <span class="process-steps__icon" aria-hidden="true"><i data-lucide="layout-template"></i></span>
+            <span class="process-steps__text">Incorporated key user flows, site structure, and DESIGN.MD file</span>
+          </li>
+          <li class="process-steps__item">
+            <span class="process-steps__icon" aria-hidden="true"><i data-lucide="plug"></i></span>
+            <span class="process-steps__text">Connected site to RunSignup API</span>
+          </li>
+          <li class="process-steps__item">
+            <span class="process-steps__icon" aria-hidden="true"><i data-lucide="loader"></i></span>
+            <span class="process-steps__text">Accounted for success, error, and loading states</span>
+          </li>
+          <li class="process-steps__item">
+            <span class="process-steps__icon" aria-hidden="true"><i data-lucide="rocket"></i></span>
+            <span class="process-steps__text">Iterated appropriately, published, and hosted on Netlify</span>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -184,6 +162,57 @@
           <li class="feature-list__item">Save races for training and tracking purposes</li>
           <li class="feature-list__item">Web responsive support</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="journey-heading">
+      <div class="container">
+        <p class="type-label">Main screens</p>
+        <h2 class="section-title" id="journey-heading">User journey</h2>
+        <div class="process-grid">
+          <figure class="process-item">
+            <img
+              class="process-item__img"
+              src="assets/RF_Process_1.png"
+              alt="Race Finder — home page search"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <figcaption class="process-item__caption">
+              <span class="process-item__step" aria-hidden="true">01</span>
+              User lands on Race Finder home page where they can quickly and easily start a search
+            </figcaption>
+          </figure>
+          <figure class="process-item">
+            <img
+              class="process-item__img"
+              src="assets/RF_Process_2.png"
+              alt="Race Finder — filtering search results"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <figcaption class="process-item__caption">
+              <span class="process-item__step" aria-hidden="true">02</span>
+              Upon search, users have the option to filter race results to further meet their needs
+            </figcaption>
+          </figure>
+          <figure class="process-item">
+            <img
+              class="process-item__img"
+              src="assets/RF_Process_3.png"
+              alt="Race Finder — saving races to My races"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <figcaption class="process-item__caption">
+              <span class="process-item__step" aria-hidden="true">03</span>
+              Upon save, the race is stored in the "My races" page for future reference and tracking
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 

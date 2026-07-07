@@ -18,11 +18,16 @@ Buzz Tracker is a fun, interactive app that helps you hit your personal energy g
 It's easy to lose track of one's caffeine intake and stay on track, especially if you're addicted to the ol' cup of Joe. Users need a fun and accessible way to stay in check when meeting their caffeine goals. 
 
 
-## Process
+## User journey
 
 - Users land on the Buzz Tracker home page where they can set goals, select their drinks, and view accrued caffeine totals
 - Users can progressively see how they're doing in relation to their caffeine goals 
 - Users can track usage on a daily and weekly basis 
+
+## Process
+- Mapped out key user flows
+- Prompted related user flows and site structure using Cursor
+- Iterated appropriately, published, and hosted on Netlify
 
 ## Solution
 Buzz Tracker provides a vibrant, interactive platform where users can log their daily caffeine intake across unique beverages like yerba mate, mushroom coffee, and artisanal drinks. By transforming personalized consumption goals into an engaging habit, the app guides users toward their ideal energy levels without the friction of traditional tracking.

@@ -113,54 +113,24 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="process-heading">
+    <section class="section" style="background: rgba(255,255,255,0.3);" aria-labelledby="process-heading">
       <div class="container">
         <p class="type-label">How it was built</p>
         <h2 class="section-title" id="process-heading">Process</h2>
-        <div class="process-grid">
-          <figure class="process-item">
-            <img
-              class="process-item__img"
-              src="BT_Process_1.png"
-              alt="Buzz Tracker process step 1 — home page goals and drink selection"
-              width="640"
-              height="400"
-              loading="lazy"
-            >
-            <figcaption class="process-item__caption">
-              <span class="process-item__step" aria-hidden="true">01</span>
-              Users land on the Buzz Tracker home page where they can set goals, select their drinks, and view accrued caffeine totals
-            </figcaption>
-          </figure>
-          <figure class="process-item">
-            <img
-              class="process-item__img"
-              src="BT_Process_2.png"
-              alt="Buzz Tracker process step 2 — progress toward caffeine goals"
-              width="640"
-              height="400"
-              loading="lazy"
-            >
-            <figcaption class="process-item__caption">
-              <span class="process-item__step" aria-hidden="true">02</span>
-              Users can progressively see how they're doing in relation to their caffeine goals
-            </figcaption>
-          </figure>
-          <figure class="process-item">
-            <img
-              class="process-item__img"
-              src="BT_Process_3.png"
-              alt="Buzz Tracker process step 3 — daily and weekly tracking"
-              width="640"
-              height="400"
-              loading="lazy"
-            >
-            <figcaption class="process-item__caption">
-              <span class="process-item__step" aria-hidden="true">03</span>
-              Users can track usage on a daily and weekly basis
-            </figcaption>
-          </figure>
-        </div>
+        <ul class="process-steps" role="list">
+          <li class="process-steps__item">
+            <span class="process-steps__icon" aria-hidden="true"><i data-lucide="map"></i></span>
+            <span class="process-steps__text">Mapped out key user flows</span>
+          </li>
+          <li class="process-steps__item">
+            <span class="process-steps__icon" aria-hidden="true"><i data-lucide="sparkles"></i></span>
+            <span class="process-steps__text">Prompted related user flows and site structure using Cursor</span>
+          </li>
+          <li class="process-steps__item">
+            <span class="process-steps__icon" aria-hidden="true"><i data-lucide="rocket"></i></span>
+            <span class="process-steps__text">Iterated appropriately, published, and hosted on Netlify</span>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -183,6 +153,57 @@
           <li class="feature-list__item">Select from a list of 6+ common caffeine types</li>
           <li class="feature-list__item">Track progress daily, weekly, and annually</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="journey-heading">
+      <div class="container">
+        <p class="type-label">Main screens</p>
+        <h2 class="section-title" id="journey-heading">User journey</h2>
+        <div class="process-grid">
+          <figure class="process-item">
+            <img
+              class="process-item__img"
+              src="BT_Process_1.png"
+              alt="Buzz Tracker — home page goals and drink selection"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <figcaption class="process-item__caption">
+              <span class="process-item__step" aria-hidden="true">01</span>
+              Users land on the Buzz Tracker home page where they can set goals, select their drinks, and view accrued caffeine totals
+            </figcaption>
+          </figure>
+          <figure class="process-item">
+            <img
+              class="process-item__img"
+              src="BT_Process_2.png"
+              alt="Buzz Tracker — progress toward caffeine goals"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <figcaption class="process-item__caption">
+              <span class="process-item__step" aria-hidden="true">02</span>
+              Users can progressively see how they're doing in relation to their caffeine goals
+            </figcaption>
+          </figure>
+          <figure class="process-item">
+            <img
+              class="process-item__img"
+              src="BT_Process_3.png"
+              alt="Buzz Tracker — daily and weekly tracking"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <figcaption class="process-item__caption">
+              <span class="process-item__step" aria-hidden="true">03</span>
+              Users can track usage on a daily and weekly basis
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
