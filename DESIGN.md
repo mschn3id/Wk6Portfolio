@@ -541,14 +541,13 @@ This section documents how Saline is **implemented** in the McKenzie Schneider v
 2. At a glance — `project-meta` grid
 3. Overview
 4. Challenge — alternate background `rgba(255,255,255,0.3)`
-5. User journey — `journey-list` numbered steps from `## User journey`
-6. Process — `process-steps` text list with Lucide icon per step from `## Process`
-7. Solution — alternate background
+5. Process — `process-steps` text list with Lucide icon per step from `## Process` (alternate background)
+6. Solution — alternate background
+7. User journey — `process-grid` browser-frame screenshots (`{XX}_Process_N.png`) with numbered captions from `## User journey` bullets
 8. Key features — `feature-list` two-column grid
-9. Gallery (optional) — `process-grid` browser-frame screenshots from `## Gallery`; captions match user journey steps
-10. Demo video (optional) — `section-heading-row` with live-app `btn-link` when `published app` is set
-11. Outcomes + Reflection — `about-grid` two columns, alternate background
-12. Back to projects — `btn-link` to `{ROOT}index.html#projects`
+9. Demo video (optional) — `section-heading-row` with live-app `btn-link` when `published app` is set
+10. Outcomes + Reflection — `about-grid` two columns, alternate background
+11. Back to projects — `btn-link` to `{ROOT}index.html#projects`
 
 **Hero visual**:
 
@@ -559,12 +558,13 @@ This section documents how Saline is **implemented** in the McKenzie Schneider v
 
 **Alternating sections**:
 
-Apply `style="background: rgba(255,255,255,0.3);"` on Challenge, Solution, and Outcomes blocks for visual rhythm.
+Apply `style="background: rgba(255,255,255,0.3);"` on Challenge, Process, Solution, and Outcomes blocks for visual rhythm. User journey, Key features, and Demo use the default transparent section background.
 
 **Typography on case studies**:
 
 - Hero `<h1>`: split title on spaces with `<br>` (e.g. `Task<br>Tracker`)
 - Section headings: `section-title` (uppercase display)
+- Section overlines: `type-label` — e.g. Context (Overview), Challenge, How it was built (Process), Response (Solution), Main screens (User journey), Highlights (Key features), Walkthrough (Demo), Results / Looking ahead (Outcomes / Reflection)
 - Outcomes/Reflection subheads: `type-h3` (mixed case, smaller than section titles)
 - Body copy: `prose` wrapper with `type-label` overlines
 
@@ -588,14 +588,14 @@ Match the header/footer markup in `TaskTracker/index.html` — not the legacy Ho
 | `{XX}_Cover.png` | Flat UI screenshot (source for mockup generation) |
 | `{XX}_Mobile.png` | Mobile UI screenshot (source for mockup generation) |
 | `{XX}_Hero.png` | Legacy hero fallback only |
-| `{XX}_Process_1.png` … `N` | Process gallery steps |
+| `{XX}_Process_1.png` … `N` | User journey screenshots (one per `## User journey` bullet) |
 | `{XX}_Video.mp4` / `.mov` | Demo walkthrough |
 
 Asset prefix: `TaskTracker` → `TT`, `RaceFinder` → `RF`, `BuzzTracker` → `BT`.
 
 Generate desktop+mobile mockups with the `device-mockup` skill when `{XX}_Mockup_desktop-mobile.png` is missing. Set `cover: assets/{XX}_Mockup_desktop-mobile.png` in `content.md`.
 
-**Process gallery images** (`{XX}_Process_N.png` in `## Gallery`): Flat Safari browser-frame mockups used in the **Gallery** section — not the text **Process** section. See process image generation below.
+**User journey screenshots** (`{XX}_Process_N.png`): Flat Safari browser-frame mockups rendered in the **User journey** section via `process-grid` / `process-item`. Each image pairs with the matching `## User journey` bullet as its caption — not the text **Process** section. See process image generation in the `portfolio-project-page` skill.
 
 ### Responsive behavior
 
@@ -610,10 +610,9 @@ Generate desktop+mobile mockups with the `device-mockup` skill when `{XX}_Mockup
 | `project-card` | Home page featured project link card |
 | `project-meta` | Role / timeline / tools / team grid |
 | `feature-list` | Key features with accent left border |
-| `process-grid` | Stacked screenshot figures with rank numerals (gallery) |
-| `process-item__img` | Full-width browser-frame process screenshots (16px radius, surface-base background) |
-| `journey-list` | Numbered user journey steps |
-| `process-steps` | Build-process steps with left-aligned Lucide icons |
+| `process-grid` | Stacked screenshot figures with rank numerals (User journey section) |
+| `process-item__img` | Full-width browser-frame screenshots (16px radius, surface-base background) |
+| `process-steps` | Build-process steps with left-aligned Lucide icons (Process section) |
 | `section-heading-row` | Demo heading + inline CTA row |
 | `about-grid` | Two-column outcomes + reflection layout |
 
