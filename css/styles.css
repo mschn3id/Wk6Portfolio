@@ -444,6 +444,10 @@ h1.type-display {
   padding-bottom: var(--space-16);
 }
 
+.section--hero.section--about {
+  padding-block: 120px;
+}
+
 .section--contact .type-display {
   margin-bottom: 1rem;
 }
