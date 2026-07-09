@@ -26,6 +26,9 @@ Recipe sites often bury useful details behind ad cluttered pages or force users 
 - Prompted site structure and DESIGN.md using Cursor
 - Iterated appropriately, published, and hosted on Netlify
 
+## Working with AI
+While using AI to build the Recipe Finder app was highly beneficial, the most enlightening part of the process was creating the DESIGN.md file. I used a more advanced AI model to generate the file. It was fascinating to see how the model took inspiration and successfully produced a structured library, complete with clear, site-like component guidelines.
+
 ## Solution
 
 Recipe Finder brings discovery, filtering, and saving into one calm interface. Users can search or filter recipes, switch between grid and list views, and open saved dishes in a focused detail modal with ingredients, instructions, and categories.

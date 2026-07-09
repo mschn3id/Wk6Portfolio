@@ -89,7 +89,7 @@ Confidence tags: **Observed** = visible in reference | **Likely** = strongly imp
 | `--font-size-2xl` | `1.77rem` (~32px) | Observed (h3) |
 | `--font-size-3xl` | `clamp(2.5rem, 5vw, 4rem)` | Section titles (fluid) | Implemented |
 | `--font-size-4xl` | `clamp(3rem, 8vw, 5.5rem)` | Hero display (fluid) | Implemented |
-| `--font-size-rank` | `4.88rem` (~88px) | Observed (product numbers) |
+| `--font-size-rank` | `clamp(3rem, 6vw, 4.88rem)` | Rank numerals, journey step labels (fluid) | Implemented |
 | `--font-weight-light` | `300` | Observed (body) |
 | `--font-weight-regular` | `400` | Observed |
 | `--font-weight-medium` | `500` | Observed (headings, CTAs) |
@@ -106,7 +106,7 @@ Confidence tags: **Observed** = visible in reference | **Likely** = strongly imp
 
 | Role | Font | Size | Weight | Transform | Line height |
 |------|------|------|--------|-----------|-------------|
-| Display / Hero | Display | `--font-size-4xl` | 500 | uppercase | tight |
+| Display / Hero | Display | `120px` on `h1.type-display`; `--font-size-4xl` elsewhere | 500 | uppercase | tight |
 | Section title | Display | `--font-size-3xl` | 500 | uppercase | tight |
 | Card title | Display | `--font-size-2xl` | 500 | none | snug |
 | Subheading | Display | `--font-size-xl` | 500 | none | snug |
@@ -516,22 +516,26 @@ This section documents how Saline is **implemented** in the McKenzie Schneider v
 | `about/index.html`, `contact/index.html` | Supporting pages |
 | `css/styles.css` | Single shared stylesheet — all tokens and components |
 | `preview.html` | Design system reference (not linked in nav) |
+| `Main.png` | Optional home hero illustration (line art; not yet wired into `index.html`) |
 
 ### Home page
 
 **Hero** (`section--hero`):
 
-- Text-only — no `hero__visual` column
-- Single-line display title with spaces (e.g. `Build With Intent`); `text-transform: uppercase` handles casing
-- `h1.type-display` uses `letter-spacing: normal` to override inherited body tracking
+- Text-only — no `hero__visual` column (single-column `.hero` grid)
+- Display title on one line with spaces (e.g. `Build With Intent`); `text-transform: uppercase` handles casing
+- `h1.type-display`: `font-size: 120px`, `letter-spacing: normal`
+- Text-only hero extras: `white-space: nowrap` on the title, `margin-bottom: 58px`, `.type-body` max-width `56rem`
 - CTA: `btn-primary` linking to `#projects`
+- Optional future enhancement: `Main.png` line-art illustration in `.hero__visual` (not yet implemented)
 
 **Featured projects** (`#projects`):
 
-- Overline: `type-label` → title: `section-title` → description: `section-desc`
+- Section intro: `type-label` → `section-title` → `section-desc`
 - `project-grid`: 2-column bordered grid; cards are full `<a class="project-card">` blocks
-- Card image: `{XX}_Mockup_desktop-mobile.png` at 16:10 (`width="280" height="175"`, `object-fit: cover`)
-- Card structure: overline → title → description → image → “View project” link with Lucide arrow
+- Card structure: **overline → image → title → description → “View project” link** with Lucide arrow
+- Card image: `{XX}_Mockup_desktop-mobile.png` at 3:2 (`width="560" height="350"`, `aspect-ratio: 3 / 2`, `object-fit: cover`)
+- Card hover: white tint background, overline darkens, image scales `1.05`
 
 ### Case study pages
 
@@ -541,13 +545,14 @@ This section documents how Saline is **implemented** in the McKenzie Schneider v
 2. At a glance — `project-meta` grid
 3. Overview
 4. Challenge — alternate background `rgba(255,255,255,0.3)`
-5. Process — `process-steps` text list with Lucide icon per step from `## Process` (alternate background)
-6. Solution — alternate background
-7. User journey — `process-grid` browser-frame screenshots (`{XX}_Process_N.png`) with numbered captions from `## User journey` bullets
-8. Key features — `feature-list` two-column grid
-9. Demo video (optional) — `section-heading-row` with live-app `btn-link` when `published app` is set
-10. Outcomes + Reflection — `about-grid` two columns, alternate background
-11. Back to projects — `btn-link` to `{ROOT}index.html#projects`
+5. Solution — alternate background
+6. Demo video (optional) — `section-heading-row` with live-app `btn-link` when `published app` is set; include when `{XX}_Video.*` exists
+7. Process — `process-steps` text list with Lucide icon per step from `## Process` (alternate background)
+8. Working with AI — `ai-callout` from `## Working with AI` prose (default transparent background)
+9. User journey — `process-grid` browser-frame screenshots (`{XX}_Process_N.png`) with numbered captions from `## User journey` bullets
+10. Key features — `feature-list` two-column grid
+11. Outcomes + Reflection — `about-grid` two columns, alternate background
+12. Back to projects — `btn-link` to `{ROOT}index.html#projects`
 
 **Hero visual**:
 
@@ -558,13 +563,14 @@ This section documents how Saline is **implemented** in the McKenzie Schneider v
 
 **Alternating sections**:
 
-Apply `style="background: rgba(255,255,255,0.3);"` on Challenge, Process, Solution, and Outcomes blocks for visual rhythm. User journey, Key features, and Demo use the default transparent section background.
+Apply `style="background: rgba(255,255,255,0.3);"` on Challenge, Solution, Process, and Outcomes blocks. Overview, Demo, Working with AI, User journey, and Key features use the default transparent section background.
 
 **Typography on case studies**:
 
-- Hero `<h1>`: split title on spaces with `<br>` (e.g. `Task<br>Tracker`)
+- Hero `<h1>`: `font-size: 120px`; split title on spaces with `<br>` (e.g. `Task<br>Tracker`)
+- `h1.type-display`: `letter-spacing: normal` (overrides body tracking)
 - Section headings: `section-title` (uppercase display)
-- Section overlines: `type-label` — e.g. Context (Overview), Challenge, How it was built (Process), Response (Solution), Main screens (User journey), Highlights (Key features), Walkthrough (Demo), Results / Looking ahead (Outcomes / Reflection)
+- Section overlines: `type-label` — e.g. Context (Overview), Challenge, Response (Solution), Walkthrough (Demo), How it was built (Process), Vibe coding (Working with AI), Main screens (User journey), Highlights (Key features), Results / Looking ahead (Outcomes / Reflection)
 - Outcomes/Reflection subheads: `type-h3` (mixed case, smaller than section titles)
 - Body copy: `prose` wrapper with `type-label` overlines
 
@@ -591,7 +597,7 @@ Match the header/footer markup in `TaskTracker/index.html` — not the legacy Ho
 | `{XX}_Process_1.png` … `N` | User journey screenshots (one per `## User journey` bullet) |
 | `{XX}_Video.mp4` / `.mov` | Demo walkthrough |
 
-Asset prefix: `TaskTracker` → `TT`, `RaceFinder` → `RF`, `BuzzTracker` → `BT`.
+Asset prefix: `TaskTracker` → `TT`, `RaceFinder` → `RF`, `BuzzTracker` → `BT`, `RecipeFinder` → `CF`.
 
 Generate desktop+mobile mockups with the `device-mockup` skill when `{XX}_Mockup_desktop-mobile.png` is missing. Set `cover: assets/{XX}_Mockup_desktop-mobile.png` in `content.md`.
 
@@ -600,7 +606,7 @@ Generate desktop+mobile mockups with the `device-mockup` skill when `{XX}_Mockup
 ### Responsive behavior
 
 - `@media (max-width: 1024px)`: hero stacks to single column; `project-meta` → 2 columns
-- `@media (max-width: 768px)`: `project-grid` and `feature-list` → single column; project card right border removed
+- `@media (max-width: 768px)`: `project-grid` and `feature-list` → single column; project card right border removed; `ai-callout` stacks icon above copy
 
 ### Portfolio-specific CSS classes
 
@@ -613,8 +619,10 @@ Generate desktop+mobile mockups with the `device-mockup` skill when `{XX}_Mockup
 | `process-grid` | Stacked screenshot figures with rank numerals (User journey section) |
 | `process-item__img` | Full-width browser-frame screenshots (16px radius, surface-base background) |
 | `process-steps` | Build-process steps with left-aligned Lucide icons (Process section) |
+| `ai-callout` | Working with AI prose block — elevated surface, accent left border, `bot` Lucide icon |
 | `section-heading-row` | Demo heading + inline CTA row |
 | `about-grid` | Two-column outcomes + reflection layout |
+| `project-video` | Demo video wrapper (`aspect-ratio: 16 / 9`, max-width 960px) |
 
 ---
 

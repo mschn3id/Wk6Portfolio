@@ -31,6 +31,9 @@ Most task apps overwhelm users with boards, tags, integrations, and settings bef
 - Prompted related user flows and site structure using Cursor
 - Iterated appropriately, published, and hosted on Netlify
 
+## Working with AI
+In order to get the web app efficiently stood up it was helpful to define out the site structure, page elements, and user flows in advance. From there, it could be leveraged to help facilitate the prompting and iteration process. 
+
 ## Solution
 
 TaskTracker strips the experience down to essentials — a clean list, clear completion states, and persistent storage in the browser. The design system brings generous whitespace, editorial typography, and subtle motion so the app feels intentional and easy to use.

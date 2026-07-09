@@ -32,6 +32,9 @@ Today, users have to do multiple internet searches in order to find a race that 
 - Accounted for success, error, and loading states
 - Iterated appropriately, published, and hosted on Netlify
 
+## Working with AI
+AI was helpful at multiple points in the vibecoding process. It was a partner in helping to identify the right API for the user need, assiting me with identifying the API key, troubleshooting issues that I came across, and helping me with standing up the site. 
+
 ## Solution
 
 With Race Finder, users how have the ability to search, save and track all their races in one easy to access location. 

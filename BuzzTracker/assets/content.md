@@ -29,6 +29,9 @@ It's easy to lose track of one's caffeine intake and stay on track, especially i
 - Prompted related user flows and site structure using Cursor
 - Iterated appropriately, published, and hosted on Netlify
 
+## Working with AI
+The Buzz Tracker app was one of my first site creation projects leveraging vibe coding. It was interesting to learn what prompt styles were successful and which ones weren't. As might be expected, the more specific the better and leveraging built in tools like the component selector heped with achieiving the necessary prompt precision. 
+
 ## Solution
 Buzz Tracker provides a vibrant, interactive platform where users can log their daily caffeine intake across unique beverages like yerba mate, mushroom coffee, and artisanal drinks. By transforming personalized consumption goals into an engaging habit, the app guides users toward their ideal energy levels without the friction of traditional tracking.
 

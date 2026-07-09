@@ -31,10 +31,10 @@
 
       <nav class="site-nav" id="site-nav" aria-label="Primary">
         <div class="site-nav__list">
-          <a href="../index.html#projects" class="site-nav__link overflow-btn site-nav__link--projects">
-            <span class="overflow-btn__stack"><span>Projects</span><span>Projects</span></span>
-          </a>
           <div class="site-nav__actions">
+            <a href="../index.html#projects" class="site-nav__link overflow-btn site-nav__link--projects">
+              <span class="overflow-btn__stack"><span>Projects</span><span>Projects</span></span>
+            </a>
             <a href="../about/index.html" class="site-nav__link overflow-btn site-nav__link--about">
               <span class="overflow-btn__stack"><span>About</span><span>About</span></span>
             </a>
@@ -113,6 +113,33 @@
       </div>
     </section>
 
+    <section class="section" style="background: rgba(255,255,255,0.3);" aria-labelledby="solution-heading">
+      <div class="container">
+        <p class="type-label">Response</p>
+        <h2 class="section-title" id="solution-heading">The solution</h2>
+        <div class="prose">
+          <p>TaskTracker strips the experience down to essentials — a clean list, clear completion states, and persistent storage in the browser. The design system brings generous whitespace, editorial typography, and subtle motion so the app feels intentional and easy to use.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="video-heading">
+      <div class="container">
+        <p class="type-label">Walkthrough</p>
+        <div class="section-heading-row">
+          <h2 class="section-title" id="video-heading">Demo</h2>
+          <a href="https://trackerzapp.netlify.app/" class="btn-link" target="_blank" rel="noopener noreferrer">View live app →</a>
+        </div>
+        <div class="project-video">
+          <video controls muted playsinline preload="metadata" aria-label="Task Tracker demo video">
+            <source src="assets/TT_Video.mp4" type="video/mp4">
+            <source src="assets/TT_Video.mov" type="video/quicktime">
+            Your browser does not support embedded video.
+          </video>
+        </div>
+      </div>
+    </section>
+
     <section class="section" style="background: rgba(255,255,255,0.3);" aria-labelledby="process-heading">
       <div class="container">
         <p class="type-label">How it was built</p>
@@ -134,12 +161,17 @@
       </div>
     </section>
 
-    <section class="section" style="background: rgba(255,255,255,0.3);" aria-labelledby="solution-heading">
+    <section class="section" aria-labelledby="ai-heading">
       <div class="container">
-        <p class="type-label">Response</p>
-        <h2 class="section-title" id="solution-heading">The solution</h2>
-        <div class="prose">
-          <p>TaskTracker strips the experience down to essentials — a clean list, clear completion states, and persistent storage in the browser. The design system brings generous whitespace, editorial typography, and subtle motion so the app feels intentional and easy to use.</p>
+        <p class="type-label">Vibe coding</p>
+        <h2 class="section-title" id="ai-heading">Working with AI</h2>
+        <div class="ai-callout">
+          <div class="ai-callout__icon" aria-hidden="true">
+            <i data-lucide="bot"></i>
+          </div>
+          <div class="prose ai-callout__copy">
+            <p>In order to get the web app efficiently stood up it was helpful to define out the site structure, page elements, and user flows in advance. From there, it could be leveraged to help facilitate the prompting and iteration process.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -221,23 +253,6 @@
           <li class="feature-list__item">Calm, distraction-free layout with clear visual hierarchy</li>
           <li class="feature-list__item">Responsive design that works on desktop and mobile</li>
         </ul>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="video-heading">
-      <div class="container">
-        <p class="type-label">Walkthrough</p>
-        <div class="section-heading-row">
-          <h2 class="section-title" id="video-heading">Demo</h2>
-          <a href="https://trackerzapp.netlify.app/" class="btn-link" target="_blank" rel="noopener noreferrer">View live app →</a>
-        </div>
-        <div class="project-video">
-          <video controls muted playsinline preload="metadata" aria-label="Task Tracker demo video">
-            <source src="assets/TT_Video.mp4" type="video/mp4">
-            <source src="assets/TT_Video.mov" type="video/quicktime">
-            Your browser does not support embedded video.
-          </video>
-        </div>
       </div>
     </section>
 
